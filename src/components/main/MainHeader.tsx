@@ -15,9 +15,9 @@ const navItems: Array<{
 	{ to: "/contacts", label: "Contacts" },
 ];
 
-export default function Header() {
+export const MainHeader = () => {
 	return (
-		<header className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+		<header className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
 			<div className="page-wrap flex h-14 items-center justify-between gap-4 px-4">
 				<div className="flex min-w-0 flex-1 items-center gap-3">
 					<Button
@@ -54,4 +54,4 @@ export default function Header() {
 			</div>
 		</header>
 	);
-}
+};
