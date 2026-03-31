@@ -19,7 +19,28 @@ import { Separator } from "#/components/ui/separator";
 import { Slider } from "#/components/ui/slider";
 import { formatProductPrice, PRODUCTS, type Product } from "#/helpers/products";
 
+const SHOP_PRODUCTS_PAGE_TITLE = "Shop products | TanStack Start Starter";
+const SHOP_PRODUCTS_PAGE_DESCRIPTION =
+	"Browse the collection. Filter by search, category, and price to find what you need.";
+
 export const Route = createFileRoute("/(main)/_layout/shop/products")({
+	head: () => ({
+		meta: [
+			{ title: SHOP_PRODUCTS_PAGE_TITLE },
+			{
+				name: "description",
+				content: SHOP_PRODUCTS_PAGE_DESCRIPTION,
+			},
+			{
+				property: "og:title",
+				content: SHOP_PRODUCTS_PAGE_TITLE,
+			},
+			{
+				property: "og:description",
+				content: SHOP_PRODUCTS_PAGE_DESCRIPTION,
+			},
+		],
+	}),
 	component: ShopProductsPage,
 });
 
