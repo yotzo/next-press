@@ -16,8 +16,9 @@ import { Route as mainLayoutIndexRouteImport } from './routes/(main)/_layout/ind
 import { Route as AdminLayoutUsersRouteImport } from './routes/admin/_layout/users'
 import { Route as AdminLayoutDashboardRouteImport } from './routes/admin/_layout/dashboard'
 import { Route as mainLayoutContactsRouteImport } from './routes/(main)/_layout/contacts'
-import { Route as mainLayoutBlogRouteImport } from './routes/(main)/_layout/blog'
 import { Route as mainLayoutAboutRouteImport } from './routes/(main)/_layout/about'
+import { Route as mainLayoutBlogIndexRouteImport } from './routes/(main)/_layout/blog/index'
+import { Route as mainLayoutBlogPostIdRouteImport } from './routes/(main)/_layout/blog/$postId'
 
 const AdminIndexRoute = AdminIndexRouteImport.update({
   id: '/admin/',
@@ -53,14 +54,19 @@ const mainLayoutContactsRoute = mainLayoutContactsRouteImport.update({
   path: '/contacts',
   getParentRoute: () => mainLayoutRoute,
 } as any)
-const mainLayoutBlogRoute = mainLayoutBlogRouteImport.update({
-  id: '/blog',
-  path: '/blog',
-  getParentRoute: () => mainLayoutRoute,
-} as any)
 const mainLayoutAboutRoute = mainLayoutAboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => mainLayoutRoute,
+} as any)
+const mainLayoutBlogIndexRoute = mainLayoutBlogIndexRouteImport.update({
+  id: '/blog/',
+  path: '/blog/',
+  getParentRoute: () => mainLayoutRoute,
+} as any)
+const mainLayoutBlogPostIdRoute = mainLayoutBlogPostIdRouteImport.update({
+  id: '/blog/$postId',
+  path: '/blog/$postId',
   getParentRoute: () => mainLayoutRoute,
 } as any)
 
@@ -68,20 +74,22 @@ export interface FileRoutesByFullPath {
   '/admin': typeof AdminLayoutRouteWithChildren
   '/admin/': typeof AdminIndexRoute
   '/about': typeof mainLayoutAboutRoute
-  '/blog': typeof mainLayoutBlogRoute
   '/contacts': typeof mainLayoutContactsRoute
   '/admin/dashboard': typeof AdminLayoutDashboardRoute
   '/admin/users': typeof AdminLayoutUsersRoute
   '/': typeof mainLayoutIndexRoute
+  '/blog/$postId': typeof mainLayoutBlogPostIdRoute
+  '/blog/': typeof mainLayoutBlogIndexRoute
 }
 export interface FileRoutesByTo {
   '/admin': typeof AdminIndexRoute
   '/about': typeof mainLayoutAboutRoute
-  '/blog': typeof mainLayoutBlogRoute
   '/contacts': typeof mainLayoutContactsRoute
   '/admin/dashboard': typeof AdminLayoutDashboardRoute
   '/admin/users': typeof AdminLayoutUsersRoute
   '/': typeof mainLayoutIndexRoute
+  '/blog/$postId': typeof mainLayoutBlogPostIdRoute
+  '/blog': typeof mainLayoutBlogIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -89,11 +97,12 @@ export interface FileRoutesById {
   '/admin/_layout': typeof AdminLayoutRouteWithChildren
   '/admin/': typeof AdminIndexRoute
   '/(main)/_layout/about': typeof mainLayoutAboutRoute
-  '/(main)/_layout/blog': typeof mainLayoutBlogRoute
   '/(main)/_layout/contacts': typeof mainLayoutContactsRoute
   '/admin/_layout/dashboard': typeof AdminLayoutDashboardRoute
   '/admin/_layout/users': typeof AdminLayoutUsersRoute
   '/(main)/_layout/': typeof mainLayoutIndexRoute
+  '/(main)/_layout/blog/$postId': typeof mainLayoutBlogPostIdRoute
+  '/(main)/_layout/blog/': typeof mainLayoutBlogIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -101,31 +110,34 @@ export interface FileRouteTypes {
     | '/admin'
     | '/admin/'
     | '/about'
-    | '/blog'
     | '/contacts'
     | '/admin/dashboard'
     | '/admin/users'
     | '/'
+    | '/blog/$postId'
+    | '/blog/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/admin'
     | '/about'
-    | '/blog'
     | '/contacts'
     | '/admin/dashboard'
     | '/admin/users'
     | '/'
+    | '/blog/$postId'
+    | '/blog'
   id:
     | '__root__'
     | '/(main)/_layout'
     | '/admin/_layout'
     | '/admin/'
     | '/(main)/_layout/about'
-    | '/(main)/_layout/blog'
     | '/(main)/_layout/contacts'
     | '/admin/_layout/dashboard'
     | '/admin/_layout/users'
     | '/(main)/_layout/'
+    | '/(main)/_layout/blog/$postId'
+    | '/(main)/_layout/blog/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -185,13 +197,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof mainLayoutContactsRouteImport
       parentRoute: typeof mainLayoutRoute
     }
-    '/(main)/_layout/blog': {
-      id: '/(main)/_layout/blog'
-      path: '/blog'
-      fullPath: '/blog'
-      preLoaderRoute: typeof mainLayoutBlogRouteImport
-      parentRoute: typeof mainLayoutRoute
-    }
     '/(main)/_layout/about': {
       id: '/(main)/_layout/about'
       path: '/about'
@@ -199,21 +204,37 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof mainLayoutAboutRouteImport
       parentRoute: typeof mainLayoutRoute
     }
+    '/(main)/_layout/blog/': {
+      id: '/(main)/_layout/blog/'
+      path: '/blog'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof mainLayoutBlogIndexRouteImport
+      parentRoute: typeof mainLayoutRoute
+    }
+    '/(main)/_layout/blog/$postId': {
+      id: '/(main)/_layout/blog/$postId'
+      path: '/blog/$postId'
+      fullPath: '/blog/$postId'
+      preLoaderRoute: typeof mainLayoutBlogPostIdRouteImport
+      parentRoute: typeof mainLayoutRoute
+    }
   }
 }
 
 interface mainLayoutRouteChildren {
   mainLayoutAboutRoute: typeof mainLayoutAboutRoute
-  mainLayoutBlogRoute: typeof mainLayoutBlogRoute
   mainLayoutContactsRoute: typeof mainLayoutContactsRoute
   mainLayoutIndexRoute: typeof mainLayoutIndexRoute
+  mainLayoutBlogPostIdRoute: typeof mainLayoutBlogPostIdRoute
+  mainLayoutBlogIndexRoute: typeof mainLayoutBlogIndexRoute
 }
 
 const mainLayoutRouteChildren: mainLayoutRouteChildren = {
   mainLayoutAboutRoute: mainLayoutAboutRoute,
-  mainLayoutBlogRoute: mainLayoutBlogRoute,
   mainLayoutContactsRoute: mainLayoutContactsRoute,
   mainLayoutIndexRoute: mainLayoutIndexRoute,
+  mainLayoutBlogPostIdRoute: mainLayoutBlogPostIdRoute,
+  mainLayoutBlogIndexRoute: mainLayoutBlogIndexRoute,
 }
 
 const mainLayoutRouteWithChildren = mainLayoutRoute._addFileChildren(

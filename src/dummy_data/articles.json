@@ -9,7 +9,56 @@
 			"publishedAt": "2026-03-18T09:00:00.000Z",
 			"category": "Company",
 			"readTimeMinutes": 6,
-			"tags": ["announcement", "product", "editorial"]
+			"tags": [
+				"announcement",
+				"product",
+				"editorial"
+			],
+			"coverImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1600&q=80",
+			"authorRole": "Editorial lead",
+			"authorBio": "Runs the NextPress journal and cares about calm shipping cadences.",
+			"updatedAt": "2026-03-18T09:00:00.000Z",
+			"body": [
+				{
+					"type": "paragraph",
+					"text": "Why we built a TanStack-first publishing experience and what problems it solves for content teams. In this article we go deeper than the summary line—with examples you can reuse on your own team this week."
+				},
+				{
+					"type": "heading",
+					"level": 2,
+					"text": "The core tension"
+				},
+				{
+					"type": "paragraph",
+					"text": "Regardless of whether you sit in Company, most teams bump into the same friction: speed versus clarity. You want to ship, but you also want the work to hold up when someone reads it six months from now."
+				},
+				{
+					"type": "blockquote",
+					"text": "Prefer repeatable rituals over one-off heroics. Small loops compound."
+				},
+				{
+					"type": "paragraph",
+					"text": "We have seen the highest leverage come from narrowing scope, agreeing on a single source of truth, and publishing on a predictable rhythm—even when the artifact is imperfect."
+				},
+				{
+					"type": "heading",
+					"level": 2,
+					"text": "What to try next"
+				},
+				{
+					"type": "list",
+					"ordered": false,
+					"items": [
+						"Pick one metric everyone can explain in a sentence.",
+						"Ship the smallest version that teaches you something.",
+						"Capture decisions in-line so future readers know why something looks the way it does."
+					]
+				},
+				{
+					"type": "paragraph",
+					"text": "If you take one habit from this piece, make it narrower scopes and clearer owners. Everything else gets easier once those two are true."
+				}
+			]
 		},
 		{
 			"id": "2",
@@ -20,7 +69,56 @@
 			"publishedAt": "2026-03-15T14:30:00.000Z",
 			"category": "Engineering",
 			"readTimeMinutes": 9,
-			"tags": ["tanstack", "routing", "react"]
+			"tags": [
+				"tanstack",
+				"routing",
+				"react"
+			],
+			"coverImage": "https://images.unsplash.com/photo-1486312338210-ce31d21836b1?w=1600&q=80",
+			"authorRole": "Senior engineer",
+			"authorBio": "Focuses on routing, performance, and accessible UI patterns.",
+			"updatedAt": "2026-03-15T14:30:00.000Z",
+			"body": [
+				{
+					"type": "paragraph",
+					"text": "Layouts, pathless groups, and how to keep growing routes readable as your app gains surfaces. In this article we go deeper than the summary line—with examples you can reuse on your own team this week."
+				},
+				{
+					"type": "heading",
+					"level": 2,
+					"text": "The core tension"
+				},
+				{
+					"type": "paragraph",
+					"text": "Regardless of whether you sit in Engineering, most teams bump into the same friction: speed versus clarity. You want to ship, but you also want the work to hold up when someone reads it six months from now."
+				},
+				{
+					"type": "blockquote",
+					"text": "Prefer repeatable rituals over one-off heroics. Small loops compound."
+				},
+				{
+					"type": "paragraph",
+					"text": "We have seen the highest leverage come from narrowing scope, agreeing on a single source of truth, and publishing on a predictable rhythm—even when the artifact is imperfect."
+				},
+				{
+					"type": "heading",
+					"level": 2,
+					"text": "What to try next"
+				},
+				{
+					"type": "list",
+					"ordered": false,
+					"items": [
+						"Pick one metric everyone can explain in a sentence.",
+						"Ship the smallest version that teaches you something.",
+						"Capture decisions in-line so future readers know why something looks the way it does."
+					]
+				},
+				{
+					"type": "paragraph",
+					"text": "If you take one habit from this piece, make it narrower scopes and clearer owners. Everything else gets easier once those two are true."
+				}
+			]
 		},
 		{
 			"id": "3",
@@ -31,7 +129,56 @@
 			"publishedAt": "2026-03-12T11:00:00.000Z",
 			"category": "Design",
 			"readTimeMinutes": 7,
-			"tags": ["typography", "ux", "content"]
+			"tags": [
+				"typography",
+				"ux",
+				"content"
+			],
+			"coverImage": "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?w=1600&q=80",
+			"authorRole": "Design lead",
+			"authorBio": "Thinks in type scales, rhythm, and systems that survive handoff.",
+			"updatedAt": "2026-03-12T11:00:00.000Z",
+			"body": [
+				{
+					"type": "paragraph",
+					"text": "Line length, type scale, and spacing choices that make essays feel effortless to read. In this article we go deeper than the summary line—with examples you can reuse on your own team this week."
+				},
+				{
+					"type": "heading",
+					"level": 2,
+					"text": "The core tension"
+				},
+				{
+					"type": "paragraph",
+					"text": "Regardless of whether you sit in Design, most teams bump into the same friction: speed versus clarity. You want to ship, but you also want the work to hold up when someone reads it six months from now."
+				},
+				{
+					"type": "blockquote",
+					"text": "Prefer repeatable rituals over one-off heroics. Small loops compound."
+				},
+				{
+					"type": "paragraph",
+					"text": "We have seen the highest leverage come from narrowing scope, agreeing on a single source of truth, and publishing on a predictable rhythm—even when the artifact is imperfect."
+				},
+				{
+					"type": "heading",
+					"level": 2,
+					"text": "What to try next"
+				},
+				{
+					"type": "list",
+					"ordered": false,
+					"items": [
+						"Pick one metric everyone can explain in a sentence.",
+						"Ship the smallest version that teaches you something.",
+						"Capture decisions in-line so future readers know why something looks the way it does."
+					]
+				},
+				{
+					"type": "paragraph",
+					"text": "If you take one habit from this piece, make it narrower scopes and clearer owners. Everything else gets easier once those two are true."
+				}
+			]
 		},
 		{
 			"id": "4",
@@ -42,7 +189,56 @@
 			"publishedAt": "2026-03-10T08:45:00.000Z",
 			"category": "Tutorials",
 			"readTimeMinutes": 5,
-			"tags": ["accessibility", "ux", "patterns"]
+			"tags": [
+				"accessibility",
+				"ux",
+				"patterns"
+			],
+			"coverImage": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1600&q=80",
+			"authorRole": "Senior engineer",
+			"authorBio": "Focuses on routing, performance, and accessible UI patterns.",
+			"updatedAt": "2026-03-10T08:45:00.000Z",
+			"body": [
+				{
+					"type": "paragraph",
+					"text": "Skip links, keyboard support, and how to avoid dead ends when archives grow large. In this article we go deeper than the summary line—with examples you can reuse on your own team this week."
+				},
+				{
+					"type": "heading",
+					"level": 2,
+					"text": "The core tension"
+				},
+				{
+					"type": "paragraph",
+					"text": "Regardless of whether you sit in Tutorials, most teams bump into the same friction: speed versus clarity. You want to ship, but you also want the work to hold up when someone reads it six months from now."
+				},
+				{
+					"type": "blockquote",
+					"text": "Prefer repeatable rituals over one-off heroics. Small loops compound."
+				},
+				{
+					"type": "paragraph",
+					"text": "We have seen the highest leverage come from narrowing scope, agreeing on a single source of truth, and publishing on a predictable rhythm—even when the artifact is imperfect."
+				},
+				{
+					"type": "heading",
+					"level": 2,
+					"text": "What to try next"
+				},
+				{
+					"type": "list",
+					"ordered": false,
+					"items": [
+						"Pick one metric everyone can explain in a sentence.",
+						"Ship the smallest version that teaches you something.",
+						"Capture decisions in-line so future readers know why something looks the way it does."
+					]
+				},
+				{
+					"type": "paragraph",
+					"text": "If you take one habit from this piece, make it narrower scopes and clearer owners. Everything else gets easier once those two are true."
+				}
+			]
 		},
 		{
 			"id": "5",
@@ -53,7 +249,56 @@
 			"publishedAt": "2026-03-08T16:20:00.000Z",
 			"category": "Product",
 			"readTimeMinutes": 8,
-			"tags": ["strategy", "roadmap", "pm"]
+			"tags": [
+				"strategy",
+				"roadmap",
+				"pm"
+			],
+			"coverImage": "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1600&q=80",
+			"authorRole": "Product strategy",
+			"authorBio": "Turns noisy signals into roadmaps teams can actually follow.",
+			"updatedAt": "2026-03-08T16:20:00.000Z",
+			"body": [
+				{
+					"type": "paragraph",
+					"text": "A lightweight ritual for turning customer signals into a sequenced plan product teams can trust. In this article we go deeper than the summary line—with examples you can reuse on your own team this week."
+				},
+				{
+					"type": "heading",
+					"level": 2,
+					"text": "The core tension"
+				},
+				{
+					"type": "paragraph",
+					"text": "Regardless of whether you sit in Product, most teams bump into the same friction: speed versus clarity. You want to ship, but you also want the work to hold up when someone reads it six months from now."
+				},
+				{
+					"type": "blockquote",
+					"text": "Prefer repeatable rituals over one-off heroics. Small loops compound."
+				},
+				{
+					"type": "paragraph",
+					"text": "We have seen the highest leverage come from narrowing scope, agreeing on a single source of truth, and publishing on a predictable rhythm—even when the artifact is imperfect."
+				},
+				{
+					"type": "heading",
+					"level": 2,
+					"text": "What to try next"
+				},
+				{
+					"type": "list",
+					"ordered": false,
+					"items": [
+						"Pick one metric everyone can explain in a sentence.",
+						"Ship the smallest version that teaches you something.",
+						"Capture decisions in-line so future readers know why something looks the way it does."
+					]
+				},
+				{
+					"type": "paragraph",
+					"text": "If you take one habit from this piece, make it narrower scopes and clearer owners. Everything else gets easier once those two are true."
+				}
+			]
 		},
 		{
 			"id": "6",
@@ -64,7 +309,56 @@
 			"publishedAt": "2026-03-05T10:15:00.000Z",
 			"category": "Design",
 			"readTimeMinutes": 10,
-			"tags": ["design-systems", "css", "tokens"]
+			"tags": [
+				"design-systems",
+				"css",
+				"tokens"
+			],
+			"coverImage": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1600&q=80",
+			"authorRole": "Design lead",
+			"authorBio": "Thinks in type scales, rhythm, and systems that survive handoff.",
+			"updatedAt": "2026-03-05T10:15:00.000Z",
+			"body": [
+				{
+					"type": "paragraph",
+					"text": "Naming, layers, and how to keep dark mode and brand refreshes from becoming rewrites. In this article we go deeper than the summary line—with examples you can reuse on your own team this week."
+				},
+				{
+					"type": "heading",
+					"level": 2,
+					"text": "The core tension"
+				},
+				{
+					"type": "paragraph",
+					"text": "Regardless of whether you sit in Design, most teams bump into the same friction: speed versus clarity. You want to ship, but you also want the work to hold up when someone reads it six months from now."
+				},
+				{
+					"type": "blockquote",
+					"text": "Prefer repeatable rituals over one-off heroics. Small loops compound."
+				},
+				{
+					"type": "paragraph",
+					"text": "We have seen the highest leverage come from narrowing scope, agreeing on a single source of truth, and publishing on a predictable rhythm—even when the artifact is imperfect."
+				},
+				{
+					"type": "heading",
+					"level": 2,
+					"text": "What to try next"
+				},
+				{
+					"type": "list",
+					"ordered": false,
+					"items": [
+						"Pick one metric everyone can explain in a sentence.",
+						"Ship the smallest version that teaches you something.",
+						"Capture decisions in-line so future readers know why something looks the way it does."
+					]
+				},
+				{
+					"type": "paragraph",
+					"text": "If you take one habit from this piece, make it narrower scopes and clearer owners. Everything else gets easier once those two are true."
+				}
+			]
 		},
 		{
 			"id": "7",
@@ -75,7 +369,56 @@
 			"publishedAt": "2026-03-02T09:00:00.000Z",
 			"category": "Engineering",
 			"readTimeMinutes": 12,
-			"tags": ["performance", "react", "ssr"]
+			"tags": [
+				"performance",
+				"react",
+				"ssr"
+			],
+			"coverImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1600&q=80",
+			"authorRole": "Senior engineer",
+			"authorBio": "Focuses on routing, performance, and accessible UI patterns.",
+			"updatedAt": "2026-03-02T09:00:00.000Z",
+			"body": [
+				{
+					"type": "paragraph",
+					"text": "What we measured before changing our shell strategy, and the surprises in time-to-first-byte. In this article we go deeper than the summary line—with examples you can reuse on your own team this week."
+				},
+				{
+					"type": "heading",
+					"level": 2,
+					"text": "The core tension"
+				},
+				{
+					"type": "paragraph",
+					"text": "Regardless of whether you sit in Engineering, most teams bump into the same friction: speed versus clarity. You want to ship, but you also want the work to hold up when someone reads it six months from now."
+				},
+				{
+					"type": "blockquote",
+					"text": "Prefer repeatable rituals over one-off heroics. Small loops compound."
+				},
+				{
+					"type": "paragraph",
+					"text": "We have seen the highest leverage come from narrowing scope, agreeing on a single source of truth, and publishing on a predictable rhythm—even when the artifact is imperfect."
+				},
+				{
+					"type": "heading",
+					"level": 2,
+					"text": "What to try next"
+				},
+				{
+					"type": "list",
+					"ordered": false,
+					"items": [
+						"Pick one metric everyone can explain in a sentence.",
+						"Ship the smallest version that teaches you something.",
+						"Capture decisions in-line so future readers know why something looks the way it does."
+					]
+				},
+				{
+					"type": "paragraph",
+					"text": "If you take one habit from this piece, make it narrower scopes and clearer owners. Everything else gets easier once those two are true."
+				}
+			]
 		},
 		{
 			"id": "8",
@@ -86,7 +429,56 @@
 			"publishedAt": "2026-02-27T13:00:00.000Z",
 			"category": "Product",
 			"readTimeMinutes": 4,
-			"tags": ["communication", "writing", "launch"]
+			"tags": [
+				"communication",
+				"writing",
+				"launch"
+			],
+			"coverImage": "https://images.unsplash.com/photo-1486312338210-ce31d21836b1?w=1600&q=80",
+			"authorRole": "Editorial lead",
+			"authorBio": "Runs the NextPress journal and cares about calm shipping cadences.",
+			"updatedAt": "2026-02-27T13:00:00.000Z",
+			"body": [
+				{
+					"type": "paragraph",
+					"text": "Structure, tone, and examples that turn changelogs into a trust-building habit. In this article we go deeper than the summary line—with examples you can reuse on your own team this week."
+				},
+				{
+					"type": "heading",
+					"level": 2,
+					"text": "The core tension"
+				},
+				{
+					"type": "paragraph",
+					"text": "Regardless of whether you sit in Product, most teams bump into the same friction: speed versus clarity. You want to ship, but you also want the work to hold up when someone reads it six months from now."
+				},
+				{
+					"type": "blockquote",
+					"text": "Prefer repeatable rituals over one-off heroics. Small loops compound."
+				},
+				{
+					"type": "paragraph",
+					"text": "We have seen the highest leverage come from narrowing scope, agreeing on a single source of truth, and publishing on a predictable rhythm—even when the artifact is imperfect."
+				},
+				{
+					"type": "heading",
+					"level": 2,
+					"text": "What to try next"
+				},
+				{
+					"type": "list",
+					"ordered": false,
+					"items": [
+						"Pick one metric everyone can explain in a sentence.",
+						"Ship the smallest version that teaches you something.",
+						"Capture decisions in-line so future readers know why something looks the way it does."
+					]
+				},
+				{
+					"type": "paragraph",
+					"text": "If you take one habit from this piece, make it narrower scopes and clearer owners. Everything else gets easier once those two are true."
+				}
+			]
 		},
 		{
 			"id": "9",
@@ -97,7 +489,56 @@
 			"publishedAt": "2026-02-22T09:30:00.000Z",
 			"category": "Tutorials",
 			"readTimeMinutes": 6,
-			"tags": ["editorial", "process", "teams"]
+			"tags": [
+				"editorial",
+				"process",
+				"teams"
+			],
+			"coverImage": "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?w=1600&q=80",
+			"authorRole": "Editorial lead",
+			"authorBio": "Runs the NextPress journal and cares about calm shipping cadences.",
+			"updatedAt": "2026-02-22T09:30:00.000Z",
+			"body": [
+				{
+					"type": "paragraph",
+					"text": "Cadence, ownership, and a template you can reuse without heavyweight tooling. In this article we go deeper than the summary line—with examples you can reuse on your own team this week."
+				},
+				{
+					"type": "heading",
+					"level": 2,
+					"text": "The core tension"
+				},
+				{
+					"type": "paragraph",
+					"text": "Regardless of whether you sit in Tutorials, most teams bump into the same friction: speed versus clarity. You want to ship, but you also want the work to hold up when someone reads it six months from now."
+				},
+				{
+					"type": "blockquote",
+					"text": "Prefer repeatable rituals over one-off heroics. Small loops compound."
+				},
+				{
+					"type": "paragraph",
+					"text": "We have seen the highest leverage come from narrowing scope, agreeing on a single source of truth, and publishing on a predictable rhythm—even when the artifact is imperfect."
+				},
+				{
+					"type": "heading",
+					"level": 2,
+					"text": "What to try next"
+				},
+				{
+					"type": "list",
+					"ordered": false,
+					"items": [
+						"Pick one metric everyone can explain in a sentence.",
+						"Ship the smallest version that teaches you something.",
+						"Capture decisions in-line so future readers know why something looks the way it does."
+					]
+				},
+				{
+					"type": "paragraph",
+					"text": "If you take one habit from this piece, make it narrower scopes and clearer owners. Everything else gets easier once those two are true."
+				}
+			]
 		},
 		{
 			"id": "10",
@@ -108,7 +549,56 @@
 			"publishedAt": "2026-02-18T11:45:00.000Z",
 			"category": "Company",
 			"readTimeMinutes": 7,
-			"tags": ["open-source", "culture", "community"]
+			"tags": [
+				"open-source",
+				"culture",
+				"community"
+			],
+			"coverImage": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1600&q=80",
+			"authorRole": "Product strategy",
+			"authorBio": "Turns noisy signals into roadmaps teams can actually follow.",
+			"updatedAt": "2026-02-18T11:45:00.000Z",
+			"body": [
+				{
+					"type": "paragraph",
+					"text": "Boundaries, funding models, and communication norms that keep maintainers in the game. In this article we go deeper than the summary line—with examples you can reuse on your own team this week."
+				},
+				{
+					"type": "heading",
+					"level": 2,
+					"text": "The core tension"
+				},
+				{
+					"type": "paragraph",
+					"text": "Regardless of whether you sit in Company, most teams bump into the same friction: speed versus clarity. You want to ship, but you also want the work to hold up when someone reads it six months from now."
+				},
+				{
+					"type": "blockquote",
+					"text": "Prefer repeatable rituals over one-off heroics. Small loops compound."
+				},
+				{
+					"type": "paragraph",
+					"text": "We have seen the highest leverage come from narrowing scope, agreeing on a single source of truth, and publishing on a predictable rhythm—even when the artifact is imperfect."
+				},
+				{
+					"type": "heading",
+					"level": 2,
+					"text": "What to try next"
+				},
+				{
+					"type": "list",
+					"ordered": false,
+					"items": [
+						"Pick one metric everyone can explain in a sentence.",
+						"Ship the smallest version that teaches you something.",
+						"Capture decisions in-line so future readers know why something looks the way it does."
+					]
+				},
+				{
+					"type": "paragraph",
+					"text": "If you take one habit from this piece, make it narrower scopes and clearer owners. Everything else gets easier once those two are true."
+				}
+			]
 		},
 		{
 			"id": "11",
@@ -119,7 +609,56 @@
 			"publishedAt": "2026-02-14T08:00:00.000Z",
 			"category": "Engineering",
 			"readTimeMinutes": 11,
-			"tags": ["forms", "accessibility", "react"]
+			"tags": [
+				"forms",
+				"accessibility",
+				"react"
+			],
+			"coverImage": "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1600&q=80",
+			"authorRole": "Senior engineer",
+			"authorBio": "Focuses on routing, performance, and accessible UI patterns.",
+			"updatedAt": "2026-02-14T08:00:00.000Z",
+			"body": [
+				{
+					"type": "paragraph",
+					"text": "When to validate on blur, how to group errors, and patterns that work with screen readers. In this article we go deeper than the summary line—with examples you can reuse on your own team this week."
+				},
+				{
+					"type": "heading",
+					"level": 2,
+					"text": "The core tension"
+				},
+				{
+					"type": "paragraph",
+					"text": "Regardless of whether you sit in Engineering, most teams bump into the same friction: speed versus clarity. You want to ship, but you also want the work to hold up when someone reads it six months from now."
+				},
+				{
+					"type": "blockquote",
+					"text": "Prefer repeatable rituals over one-off heroics. Small loops compound."
+				},
+				{
+					"type": "paragraph",
+					"text": "We have seen the highest leverage come from narrowing scope, agreeing on a single source of truth, and publishing on a predictable rhythm—even when the artifact is imperfect."
+				},
+				{
+					"type": "heading",
+					"level": 2,
+					"text": "What to try next"
+				},
+				{
+					"type": "list",
+					"ordered": false,
+					"items": [
+						"Pick one metric everyone can explain in a sentence.",
+						"Ship the smallest version that teaches you something.",
+						"Capture decisions in-line so future readers know why something looks the way it does."
+					]
+				},
+				{
+					"type": "paragraph",
+					"text": "If you take one habit from this piece, make it narrower scopes and clearer owners. Everything else gets easier once those two are true."
+				}
+			]
 		},
 		{
 			"id": "12",
@@ -130,7 +669,56 @@
 			"publishedAt": "2026-02-10T15:10:00.000Z",
 			"category": "Design",
 			"readTimeMinutes": 5,
-			"tags": ["ux-writing", "empty-states", "onboarding"]
+			"tags": [
+				"ux-writing",
+				"empty-states",
+				"onboarding"
+			],
+			"coverImage": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1600&q=80",
+			"authorRole": "Design lead",
+			"authorBio": "Thinks in type scales, rhythm, and systems that survive handoff.",
+			"updatedAt": "2026-02-10T15:10:00.000Z",
+			"body": [
+				{
+					"type": "paragraph",
+					"text": "Turn “nothing here yet” into a clear invitation with examples from real dashboards. In this article we go deeper than the summary line—with examples you can reuse on your own team this week."
+				},
+				{
+					"type": "heading",
+					"level": 2,
+					"text": "The core tension"
+				},
+				{
+					"type": "paragraph",
+					"text": "Regardless of whether you sit in Design, most teams bump into the same friction: speed versus clarity. You want to ship, but you also want the work to hold up when someone reads it six months from now."
+				},
+				{
+					"type": "blockquote",
+					"text": "Prefer repeatable rituals over one-off heroics. Small loops compound."
+				},
+				{
+					"type": "paragraph",
+					"text": "We have seen the highest leverage come from narrowing scope, agreeing on a single source of truth, and publishing on a predictable rhythm—even when the artifact is imperfect."
+				},
+				{
+					"type": "heading",
+					"level": 2,
+					"text": "What to try next"
+				},
+				{
+					"type": "list",
+					"ordered": false,
+					"items": [
+						"Pick one metric everyone can explain in a sentence.",
+						"Ship the smallest version that teaches you something.",
+						"Capture decisions in-line so future readers know why something looks the way it does."
+					]
+				},
+				{
+					"type": "paragraph",
+					"text": "If you take one habit from this piece, make it narrower scopes and clearer owners. Everything else gets easier once those two are true."
+				}
+			]
 		},
 		{
 			"id": "13",
@@ -141,7 +729,56 @@
 			"publishedAt": "2026-02-05T12:00:00.000Z",
 			"category": "Product",
 			"readTimeMinutes": 8,
-			"tags": ["analytics", "growth", "content"]
+			"tags": [
+				"analytics",
+				"growth",
+				"content"
+			],
+			"coverImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1600&q=80",
+			"authorRole": "Product strategy",
+			"authorBio": "Turns noisy signals into roadmaps teams can actually follow.",
+			"updatedAt": "2026-02-05T12:00:00.000Z",
+			"body": [
+				{
+					"type": "paragraph",
+					"text": "A small set of north-star metrics and how to tie posts to activation and retention. In this article we go deeper than the summary line—with examples you can reuse on your own team this week."
+				},
+				{
+					"type": "heading",
+					"level": 2,
+					"text": "The core tension"
+				},
+				{
+					"type": "paragraph",
+					"text": "Regardless of whether you sit in Product, most teams bump into the same friction: speed versus clarity. You want to ship, but you also want the work to hold up when someone reads it six months from now."
+				},
+				{
+					"type": "blockquote",
+					"text": "Prefer repeatable rituals over one-off heroics. Small loops compound."
+				},
+				{
+					"type": "paragraph",
+					"text": "We have seen the highest leverage come from narrowing scope, agreeing on a single source of truth, and publishing on a predictable rhythm—even when the artifact is imperfect."
+				},
+				{
+					"type": "heading",
+					"level": 2,
+					"text": "What to try next"
+				},
+				{
+					"type": "list",
+					"ordered": false,
+					"items": [
+						"Pick one metric everyone can explain in a sentence.",
+						"Ship the smallest version that teaches you something.",
+						"Capture decisions in-line so future readers know why something looks the way it does."
+					]
+				},
+				{
+					"type": "paragraph",
+					"text": "If you take one habit from this piece, make it narrower scopes and clearer owners. Everything else gets easier once those two are true."
+				}
+			]
 		},
 		{
 			"id": "14",
@@ -152,7 +789,56 @@
 			"publishedAt": "2026-02-01T09:20:00.000Z",
 			"category": "Tutorials",
 			"readTimeMinutes": 6,
-			"tags": ["collaboration", "workflow", "editing"]
+			"tags": [
+				"collaboration",
+				"workflow",
+				"editing"
+			],
+			"coverImage": "https://images.unsplash.com/photo-1486312338210-ce31d21836b1?w=1600&q=80",
+			"authorRole": "Editorial lead",
+			"authorBio": "Runs the NextPress journal and cares about calm shipping cadences.",
+			"updatedAt": "2026-02-01T09:20:00.000Z",
+			"body": [
+				{
+					"type": "paragraph",
+					"text": "Roles, comment etiquette, and when to move from doc to staging without endless loops. In this article we go deeper than the summary line—with examples you can reuse on your own team this week."
+				},
+				{
+					"type": "heading",
+					"level": 2,
+					"text": "The core tension"
+				},
+				{
+					"type": "paragraph",
+					"text": "Regardless of whether you sit in Tutorials, most teams bump into the same friction: speed versus clarity. You want to ship, but you also want the work to hold up when someone reads it six months from now."
+				},
+				{
+					"type": "blockquote",
+					"text": "Prefer repeatable rituals over one-off heroics. Small loops compound."
+				},
+				{
+					"type": "paragraph",
+					"text": "We have seen the highest leverage come from narrowing scope, agreeing on a single source of truth, and publishing on a predictable rhythm—even when the artifact is imperfect."
+				},
+				{
+					"type": "heading",
+					"level": 2,
+					"text": "What to try next"
+				},
+				{
+					"type": "list",
+					"ordered": false,
+					"items": [
+						"Pick one metric everyone can explain in a sentence.",
+						"Ship the smallest version that teaches you something.",
+						"Capture decisions in-line so future readers know why something looks the way it does."
+					]
+				},
+				{
+					"type": "paragraph",
+					"text": "If you take one habit from this piece, make it narrower scopes and clearer owners. Everything else gets easier once those two are true."
+				}
+			]
 		},
 		{
 			"id": "15",
@@ -163,7 +849,56 @@
 			"publishedAt": "2026-01-28T10:40:00.000Z",
 			"category": "Engineering",
 			"readTimeMinutes": 9,
-			"tags": ["security", "web", "checklist"]
+			"tags": [
+				"security",
+				"web",
+				"checklist"
+			],
+			"coverImage": "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?w=1600&q=80",
+			"authorRole": "Senior engineer",
+			"authorBio": "Focuses on routing, performance, and accessible UI patterns.",
+			"updatedAt": "2026-01-28T10:40:00.000Z",
+			"body": [
+				{
+					"type": "paragraph",
+					"text": "CSP, third-party scripts, and the few checks that catch most common regressions. In this article we go deeper than the summary line—with examples you can reuse on your own team this week."
+				},
+				{
+					"type": "heading",
+					"level": 2,
+					"text": "The core tension"
+				},
+				{
+					"type": "paragraph",
+					"text": "Regardless of whether you sit in Engineering, most teams bump into the same friction: speed versus clarity. You want to ship, but you also want the work to hold up when someone reads it six months from now."
+				},
+				{
+					"type": "blockquote",
+					"text": "Prefer repeatable rituals over one-off heroics. Small loops compound."
+				},
+				{
+					"type": "paragraph",
+					"text": "We have seen the highest leverage come from narrowing scope, agreeing on a single source of truth, and publishing on a predictable rhythm—even when the artifact is imperfect."
+				},
+				{
+					"type": "heading",
+					"level": 2,
+					"text": "What to try next"
+				},
+				{
+					"type": "list",
+					"ordered": false,
+					"items": [
+						"Pick one metric everyone can explain in a sentence.",
+						"Ship the smallest version that teaches you something.",
+						"Capture decisions in-line so future readers know why something looks the way it does."
+					]
+				},
+				{
+					"type": "paragraph",
+					"text": "If you take one habit from this piece, make it narrower scopes and clearer owners. Everything else gets easier once those two are true."
+				}
+			]
 		},
 		{
 			"id": "16",
@@ -174,7 +909,56 @@
 			"publishedAt": "2026-01-22T14:00:00.000Z",
 			"category": "Design",
 			"readTimeMinutes": 6,
-			"tags": ["brand", "writing", "voice"]
+			"tags": [
+				"brand",
+				"writing",
+				"voice"
+			],
+			"coverImage": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1600&q=80",
+			"authorRole": "Design lead",
+			"authorBio": "Thinks in type scales, rhythm, and systems that survive handoff.",
+			"updatedAt": "2026-01-22T14:00:00.000Z",
+			"body": [
+				{
+					"type": "paragraph",
+					"text": "Concrete exercises to align writers and designers on how the product should sound. In this article we go deeper than the summary line—with examples you can reuse on your own team this week."
+				},
+				{
+					"type": "heading",
+					"level": 2,
+					"text": "The core tension"
+				},
+				{
+					"type": "paragraph",
+					"text": "Regardless of whether you sit in Design, most teams bump into the same friction: speed versus clarity. You want to ship, but you also want the work to hold up when someone reads it six months from now."
+				},
+				{
+					"type": "blockquote",
+					"text": "Prefer repeatable rituals over one-off heroics. Small loops compound."
+				},
+				{
+					"type": "paragraph",
+					"text": "We have seen the highest leverage come from narrowing scope, agreeing on a single source of truth, and publishing on a predictable rhythm—even when the artifact is imperfect."
+				},
+				{
+					"type": "heading",
+					"level": 2,
+					"text": "What to try next"
+				},
+				{
+					"type": "list",
+					"ordered": false,
+					"items": [
+						"Pick one metric everyone can explain in a sentence.",
+						"Ship the smallest version that teaches you something.",
+						"Capture decisions in-line so future readers know why something looks the way it does."
+					]
+				},
+				{
+					"type": "paragraph",
+					"text": "If you take one habit from this piece, make it narrower scopes and clearer owners. Everything else gets easier once those two are true."
+				}
+			]
 		},
 		{
 			"id": "17",
@@ -185,7 +969,56 @@
 			"publishedAt": "2026-01-15T11:30:00.000Z",
 			"category": "Company",
 			"readTimeMinutes": 7,
-			"tags": ["retrospective", "startup", "community"]
+			"tags": [
+				"retrospective",
+				"startup",
+				"community"
+			],
+			"coverImage": "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1600&q=80",
+			"authorRole": "Editorial lead",
+			"authorBio": "Runs the NextPress journal and cares about calm shipping cadences.",
+			"updatedAt": "2026-01-15T11:30:00.000Z",
+			"body": [
+				{
+					"type": "paragraph",
+					"text": "Shipping cadence, community feedback loops, and the mistakes we would make again anyway. In this article we go deeper than the summary line—with examples you can reuse on your own team this week."
+				},
+				{
+					"type": "heading",
+					"level": 2,
+					"text": "The core tension"
+				},
+				{
+					"type": "paragraph",
+					"text": "Regardless of whether you sit in Company, most teams bump into the same friction: speed versus clarity. You want to ship, but you also want the work to hold up when someone reads it six months from now."
+				},
+				{
+					"type": "blockquote",
+					"text": "Prefer repeatable rituals over one-off heroics. Small loops compound."
+				},
+				{
+					"type": "paragraph",
+					"text": "We have seen the highest leverage come from narrowing scope, agreeing on a single source of truth, and publishing on a predictable rhythm—even when the artifact is imperfect."
+				},
+				{
+					"type": "heading",
+					"level": 2,
+					"text": "What to try next"
+				},
+				{
+					"type": "list",
+					"ordered": false,
+					"items": [
+						"Pick one metric everyone can explain in a sentence.",
+						"Ship the smallest version that teaches you something.",
+						"Capture decisions in-line so future readers know why something looks the way it does."
+					]
+				},
+				{
+					"type": "paragraph",
+					"text": "If you take one habit from this piece, make it narrower scopes and clearer owners. Everything else gets easier once those two are true."
+				}
+			]
 		},
 		{
 			"id": "18",
@@ -196,7 +1029,56 @@
 			"publishedAt": "2026-01-08T09:00:00.000Z",
 			"category": "Product",
 			"readTimeMinutes": 5,
-			"tags": ["search", "ia", "blogs"]
+			"tags": [
+				"search",
+				"ia",
+				"blogs"
+			],
+			"coverImage": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1600&q=80",
+			"authorRole": "Product strategy",
+			"authorBio": "Turns noisy signals into roadmaps teams can actually follow.",
+			"updatedAt": "2026-01-08T09:00:00.000Z",
+			"body": [
+				{
+					"type": "paragraph",
+					"text": "Facets, tags, and site search options ranked by effort versus impact for most teams. In this article we go deeper than the summary line—with examples you can reuse on your own team this week."
+				},
+				{
+					"type": "heading",
+					"level": 2,
+					"text": "The core tension"
+				},
+				{
+					"type": "paragraph",
+					"text": "Regardless of whether you sit in Product, most teams bump into the same friction: speed versus clarity. You want to ship, but you also want the work to hold up when someone reads it six months from now."
+				},
+				{
+					"type": "blockquote",
+					"text": "Prefer repeatable rituals over one-off heroics. Small loops compound."
+				},
+				{
+					"type": "paragraph",
+					"text": "We have seen the highest leverage come from narrowing scope, agreeing on a single source of truth, and publishing on a predictable rhythm—even when the artifact is imperfect."
+				},
+				{
+					"type": "heading",
+					"level": 2,
+					"text": "What to try next"
+				},
+				{
+					"type": "list",
+					"ordered": false,
+					"items": [
+						"Pick one metric everyone can explain in a sentence.",
+						"Ship the smallest version that teaches you something.",
+						"Capture decisions in-line so future readers know why something looks the way it does."
+					]
+				},
+				{
+					"type": "paragraph",
+					"text": "If you take one habit from this piece, make it narrower scopes and clearer owners. Everything else gets easier once those two are true."
+				}
+			]
 		}
 	]
 }

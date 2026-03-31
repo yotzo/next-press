@@ -69,7 +69,7 @@ function paginationRange(
 	for (let i = 0; i < sorted.length; i++) {
 		const cur = sorted[i];
 		if (cur === undefined) {
-			continue;
+			continue
 		}
 		const prev = sorted[i - 1];
 		if (prev !== undefined && cur - prev > 1) {
@@ -94,7 +94,7 @@ function tagCounts(articles: Article[]): [string, number][] {
 	return [...map.entries()].sort((a, b) => b[1] - a[1]).slice(0, 10);
 }
 
-export const Route = createFileRoute("/(main)/_layout/blog")({
+export const Route = createFileRoute("/(main)/_layout/blog/")({
 	component: BlogPage,
 });
 
@@ -106,7 +106,7 @@ function BlogPage() {
 	const categories = useMemo(
 		() => [...new Set(ALL_ARTICLES.map((a) => a.category))].sort(),
 		[],
-	);
+	)
 
 	const filtered = useMemo(() => {
 		return ALL_ARTICLES.filter((a) => {
@@ -116,7 +116,7 @@ function BlogPage() {
 		}).sort(
 			(a, b) =>
 				new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
-		);
+		)
 	}, [category, tagFilter]);
 
 	const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
@@ -139,7 +139,7 @@ function BlogPage() {
 	const pageArticles = filtered.slice(
 		(currentPage - 1) * PAGE_SIZE,
 		currentPage * PAGE_SIZE,
-	);
+	)
 
 	const popularTags = useMemo(() => tagCounts(ALL_ARTICLES), []);
 
@@ -183,8 +183,8 @@ function BlogPage() {
 								className="h-7 text-xs"
 								type="button"
 								onClick={() => {
-									pickCategory(null);
-									pickTag(null);
+									pickCategory(null)
+									pickTag(null)
 								}}
 							>
 								Clear filters
@@ -204,12 +204,13 @@ function BlogPage() {
 											</span>
 										</div>
 										<CardTitle className="text-xl leading-snug md:text-2xl">
-											<a
+											<Link
+												to="/blog/$postId"
+												params={{ postId: article.slug }}
 												className="hover:text-primary"
-												href={`/blog/${article.slug}`}
 											>
 												{article.title}
-											</a>
+											</Link>
 										</CardTitle>
 										<CardDescription className="text-base leading-relaxed">
 											{article.excerpt}
@@ -272,16 +273,16 @@ function BlogPage() {
 												: undefined
 										}
 										onClick={(e) => {
-											e.preventDefault();
+											e.preventDefault()
 											if (currentPage > 1) {
-												setPage((p) => p - 1);
-												scrollPaginationToTop();
+												setPage((p) => p - 1)
+												scrollPaginationToTop()
 											}
 										}}
 									/>
 								</PaginationItem>
 								{(() => {
-									let lastPage = 0;
+									let lastPage = 0
 									return range.map((item) => {
 										if (item === "ellipsis") {
 											const key = `ellipsis-after-${lastPage}`;
@@ -289,27 +290,27 @@ function BlogPage() {
 												<PaginationItem key={key}>
 													<PaginationEllipsis />
 												</PaginationItem>
-											);
+											)
 										}
-										lastPage = item;
+										lastPage = item
 										return (
 											<PaginationItem key={item}>
 												<PaginationLink
 													href="#"
 													isActive={item === currentPage}
 													onClick={(e) => {
-														e.preventDefault();
+														e.preventDefault()
 														if (item !== currentPage) {
-															setPage(item);
-															scrollPaginationToTop();
+															setPage(item)
+															scrollPaginationToTop()
 														}
 													}}
 												>
 													{item}
 												</PaginationLink>
 											</PaginationItem>
-										);
-									});
+										)
+									})
 								})()}
 								<PaginationItem>
 									<PaginationNext
@@ -320,10 +321,10 @@ function BlogPage() {
 												: undefined
 										}
 										onClick={(e) => {
-											e.preventDefault();
+											e.preventDefault()
 											if (currentPage < totalPages) {
-												setPage((p) => p + 1);
-												scrollPaginationToTop();
+												setPage((p) => p + 1)
+												scrollPaginationToTop()
 											}
 										}}
 									/>
@@ -471,10 +472,11 @@ function BlogPage() {
 						</CardHeader>
 						<CardContent className="divide-y px-6">
 							{recentArticles.map((a) => (
-								<a
+								<Link
 									key={a.id}
+									to="/blog/$postId"
+									params={{ postId: a.slug }}
 									className="-mx-2 block rounded-md px-2 py-3 first:pt-0 last:pb-3 hover:bg-accent/60"
-									href={`/blog/${a.slug}`}
 								>
 									<p className="line-clamp-2 font-medium text-sm leading-snug">
 										{a.title}
@@ -483,7 +485,7 @@ function BlogPage() {
 										<CalendarIcon className="size-3.5 shrink-0" aria-hidden />
 										{formatDate(a.publishedAt)}
 									</p>
-								</a>
+								</Link>
 							))}
 						</CardContent>
 					</Card>
@@ -499,7 +501,7 @@ function BlogPage() {
 							<form
 								className="space-y-2"
 								onSubmit={(e) => {
-									e.preventDefault();
+									e.preventDefault()
 								}}
 							>
 								<Input
@@ -521,5 +523,5 @@ function BlogPage() {
 				</aside>
 			</div>
 		</main>
-	);
+	)
 }
