@@ -1,0 +1,54 @@
+{
+	"items": [
+		{
+			"id": "dashboard",
+			"label": "Dashboard",
+			"icon": "layout-dashboard",
+			"to": "/admin/dashboard"
+		},
+		{
+			"id": "products",
+			"label": "Products",
+			"icon": "package",
+			"children": [
+				{
+					"id": "products-list",
+					"label": "Products",
+					"to": "/admin/products"
+				},
+				{
+					"id": "products-categories",
+					"label": "Categories",
+					"to": "/admin/products/categories"
+				},
+				{
+					"id": "products-options",
+					"label": "Options",
+					"to": "/admin/products/options"
+				}
+			]
+		},
+		{
+			"id": "blog",
+			"label": "Blog",
+			"icon": "newspaper",
+			"children": [
+				{
+					"id": "blog-articles",
+					"label": "All articles",
+					"to": "/admin/blog/articles"
+				},
+				{
+					"id": "blog-categories",
+					"label": "Categories",
+					"to": "/admin/blog/categories"
+				},
+				{
+					"id": "blog-authors",
+					"label": "Authors",
+					"to": "/admin/blog/authors"
+				}
+			]
+		}
+	]
+}
