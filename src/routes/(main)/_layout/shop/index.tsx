@@ -18,7 +18,7 @@ import {
 	CardTitle,
 } from "#/components/ui/card";
 import { Separator } from "#/components/ui/separator";
-import { formatProductPrice, PRODUCTS, type Product } from "#/lib/products";
+import { formatProductPrice, PRODUCTS, type Product } from "#/helpers/products";
 
 export const Route = createFileRoute("/(main)/_layout/shop/")({
 	component: ShopHomePage,
@@ -152,10 +152,7 @@ function ShopHomePage() {
 			</section>
 
 			<section className="mt-14" aria-labelledby="shop-highlights-heading">
-				<h2
-					id="shop-highlights-heading"
-					className="sr-only"
-				>
+				<h2 id="shop-highlights-heading" className="sr-only">
 					Why shop here
 				</h2>
 				<ul className="grid gap-6 md:grid-cols-3">

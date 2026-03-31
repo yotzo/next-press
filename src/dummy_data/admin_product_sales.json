@@ -1,0 +1,14 @@
+{
+	"currency": "USD",
+	"periodLabel": "Last 30 days",
+	"items": [
+		{ "productName": "Studio Notebook", "unitsSold": 312, "revenue": 7488 },
+		{ "productName": "Linen Tote", "unitsSold": 186, "revenue": 8928 },
+		{ "productName": "Ceramic Mug", "unitsSold": 142, "revenue": 2130 },
+		{ "productName": "Screen Print — Waves", "unitsSold": 94, "revenue": 5640 },
+		{ "productName": "Wax Seal Set", "unitsSold": 118, "revenue": 3540 },
+		{ "productName": "Organic Tee", "unitsSold": 264, "revenue": 7920 },
+		{ "productName": "Desk Calendar", "unitsSold": 203, "revenue": 4060 },
+		{ "productName": "Art Print — Blocks", "unitsSold": 156, "revenue": 4680 }
+	]
+}

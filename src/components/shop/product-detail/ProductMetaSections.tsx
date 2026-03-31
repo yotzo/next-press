@@ -8,17 +8,12 @@ import {
 	CardHeader,
 	CardTitle,
 } from "#/components/ui/card";
-import {
-	Table,
-	TableBody,
-	TableCell,
-	TableRow,
-} from "#/components/ui/table";
+import { Table, TableBody, TableCell, TableRow } from "#/components/ui/table";
 import {
 	formatSpecValue,
 	humanizeSpecKey,
 	type Product,
-} from "#/lib/products";
+} from "#/helpers/products";
 
 function formatPublishedAt(iso: string): string {
 	return new Intl.DateTimeFormat("en-US", {
@@ -28,7 +23,9 @@ function formatPublishedAt(iso: string): string {
 	}).format(new Date(iso));
 }
 
-function dimensionEntries(product: Product): { label: string; value: string }[] {
+function dimensionEntries(
+	product: Product,
+): { label: string; value: string }[] {
 	const dim = product.dimensionsMm;
 	const unit = dim.unit ?? "";
 	const out: { label: string; value: string }[] = [];
@@ -41,7 +38,9 @@ function dimensionEntries(product: Product): { label: string; value: string }[] 
 		if (typeof rawVal === "number") {
 			out.push({
 				label,
-				value: unit ? `${rawVal.toLocaleString("en-US")} ${unit}` : String(rawVal),
+				value: unit
+					? `${rawVal.toLocaleString("en-US")} ${unit}`
+					: String(rawVal),
 			});
 		} else {
 			out.push({ label, value: String(rawVal) });
@@ -69,8 +68,12 @@ export function ProductMetaSections({ product }: ProductMetaSectionsProps) {
 	return (
 		<div className="space-y-10">
 			<section className="space-y-3">
-				<h2 className="text-lg font-semibold tracking-tight">About this item</h2>
-				<p className="text-muted-foreground leading-relaxed">{product.description}</p>
+				<h2 className="text-lg font-semibold tracking-tight">
+					About this item
+				</h2>
+				<p className="text-muted-foreground leading-relaxed">
+					{product.description}
+				</p>
 			</section>
 
 			{product.tags.length > 0 ? (
@@ -106,7 +109,9 @@ export function ProductMetaSections({ product }: ProductMetaSectionsProps) {
 								key={row.label}
 								className="flex justify-between gap-4 border-b py-2 text-sm last:border-b-0 sm:block sm:rounded-lg sm:border sm:p-3"
 							>
-								<dt className="text-muted-foreground font-medium">{row.label}</dt>
+								<dt className="text-muted-foreground font-medium">
+									{row.label}
+								</dt>
 								<dd className="text-foreground text-right sm:mt-1 sm:text-left">
 									{row.value}
 								</dd>
@@ -118,7 +123,9 @@ export function ProductMetaSections({ product }: ProductMetaSectionsProps) {
 
 			{specs.length > 0 ? (
 				<section className="space-y-3">
-					<h2 className="text-lg font-semibold tracking-tight">Specifications</h2>
+					<h2 className="text-lg font-semibold tracking-tight">
+						Specifications
+					</h2>
 					<Table>
 						<TableBody>
 							{specs.map((row) => (
@@ -126,7 +133,9 @@ export function ProductMetaSections({ product }: ProductMetaSectionsProps) {
 									<TableCell className="text-muted-foreground w-[40%] whitespace-normal font-medium">
 										{row.key}
 									</TableCell>
-									<TableCell className="whitespace-normal">{row.value}</TableCell>
+									<TableCell className="whitespace-normal">
+										{row.value}
+									</TableCell>
 								</TableRow>
 							))}
 						</TableBody>
@@ -161,7 +170,9 @@ export function ProductMetaSections({ product }: ProductMetaSectionsProps) {
 							{product.shipping.freeShippingEligible ? (
 								<Badge variant="secondary">Free shipping eligible</Badge>
 							) : (
-								<span className="text-muted-foreground">Standard shipping rates apply</span>
+								<span className="text-muted-foreground">
+									Standard shipping rates apply
+								</span>
 							)}
 						</p>
 					</CardContent>
@@ -170,8 +181,13 @@ export function ProductMetaSections({ product }: ProductMetaSectionsProps) {
 				<Card>
 					<CardHeader className="pb-2">
 						<div className="flex items-center gap-2">
-							<PackageIcon className="text-muted-foreground size-4" aria-hidden />
-							<CardTitle className="text-base">Details &amp; policies</CardTitle>
+							<PackageIcon
+								className="text-muted-foreground size-4"
+								aria-hidden
+							/>
+							<CardTitle className="text-base">
+								Details &amp; policies
+							</CardTitle>
 						</div>
 					</CardHeader>
 					<CardContent className="space-y-2 text-sm">
@@ -201,7 +217,9 @@ export function ProductMetaSections({ product }: ProductMetaSectionsProps) {
 						</p>
 						<p>
 							<span className="text-muted-foreground">Listed: </span>
-							<span className="font-medium">{formatPublishedAt(product.publishedAt)}</span>
+							<span className="font-medium">
+								{formatPublishedAt(product.publishedAt)}
+							</span>
 						</p>
 					</CardContent>
 				</Card>
@@ -209,7 +227,9 @@ export function ProductMetaSections({ product }: ProductMetaSectionsProps) {
 
 			{product.careInstructions ? (
 				<section className="space-y-3">
-					<h2 className="text-lg font-semibold tracking-tight">Care instructions</h2>
+					<h2 className="text-lg font-semibold tracking-tight">
+						Care instructions
+					</h2>
 					<p className="text-muted-foreground text-sm leading-relaxed">
 						{product.careInstructions}
 					</p>

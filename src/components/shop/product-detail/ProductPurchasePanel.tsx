@@ -7,10 +7,16 @@ import {
 	formatProductPrice,
 	humanizeSpecKey,
 	type Product,
-} from "#/lib/products";
+} from "#/helpers/products";
 import { cn } from "#/lib/utils";
 
-function RatingDisplay({ rating, reviewCount }: { rating: number; reviewCount: number }) {
+function RatingDisplay({
+	rating,
+	reviewCount,
+}: {
+	rating: number;
+	reviewCount: number;
+}) {
 	const filledCount = Math.min(5, Math.max(0, Math.round(rating)));
 
 	return (
@@ -27,12 +33,17 @@ function RatingDisplay({ rating, reviewCount }: { rating: number; reviewCount: n
 					return (
 						<StarIcon
 							key={i}
-							className={cn("size-4 shrink-0", filled ? "fill-current" : "fill-none")}
+							className={cn(
+								"size-4 shrink-0",
+								filled ? "fill-current" : "fill-none",
+							)}
 						/>
 					);
 				})}
 			</div>
-			<span className="text-sm font-medium tabular-nums">{rating.toFixed(1)}</span>
+			<span className="text-sm font-medium tabular-nums">
+				{rating.toFixed(1)}
+			</span>
 			<span className="text-muted-foreground text-sm">
 				({reviewCount.toLocaleString("en-US")}{" "}
 				{reviewCount === 1 ? "review" : "reviews"})
@@ -43,16 +54,16 @@ function RatingDisplay({ rating, reviewCount }: { rating: number; reviewCount: n
 
 function StockLine({ product }: { product: Product }) {
 	if (!product.inStock) {
-		return (
-			<p className="text-destructive text-sm font-medium">Out of stock</p>
-		);
+		return <p className="text-destructive text-sm font-medium">Out of stock</p>;
 	}
 	const low =
 		product.stockQuantity <= product.lowStockThreshold &&
 		product.stockQuantity > 0;
 	return (
 		<div className="space-y-1 text-sm">
-			<p className="text-emerald-600 font-medium dark:text-emerald-400">In stock</p>
+			<p className="text-emerald-600 font-medium dark:text-emerald-400">
+				In stock
+			</p>
 			<p className="text-muted-foreground tabular-nums">
 				{product.stockQuantity} available
 				{low ? (
@@ -72,8 +83,7 @@ type ProductPurchasePanelProps = {
 
 export function ProductPurchasePanel({ product }: ProductPurchasePanelProps) {
 	const compareAt = product.compareAtPrice;
-	const hasCompare =
-		compareAt != null && compareAt > product.price;
+	const hasCompare = compareAt != null && compareAt > product.price;
 	const savings =
 		hasCompare && compareAt != null ? compareAt - product.price : 0;
 
@@ -97,13 +107,18 @@ export function ProductPurchasePanel({ product }: ProductPurchasePanelProps) {
 				<h1 className="text-3xl font-semibold tracking-tight md:text-4xl">
 					{product.name}
 				</h1>
-				<p className="text-muted-foreground text-sm">{product.shortDescription}</p>
+				<p className="text-muted-foreground text-sm">
+					{product.shortDescription}
+				</p>
 				<p className="text-muted-foreground text-sm">
 					Brand: <span className="text-foreground">{product.brand}</span>
 				</p>
 			</div>
 
-			<RatingDisplay rating={product.rating} reviewCount={product.reviewCount} />
+			<RatingDisplay
+				rating={product.rating}
+				reviewCount={product.reviewCount}
+			/>
 
 			<div className="flex flex-wrap items-baseline gap-3">
 				<span className="text-3xl font-semibold tabular-nums">
@@ -125,13 +140,11 @@ export function ProductPurchasePanel({ product }: ProductPurchasePanelProps) {
 
 			<StockLine product={product} />
 
-			{(product.colors?.length || product.sizeOptions?.length) ? (
+			{product.colors?.length || product.sizeOptions?.length ? (
 				<div className="space-y-3 text-sm">
 					{product.colors?.length ? (
 						<div>
-							<p className="text-muted-foreground mb-2 font-medium">
-								Colors
-							</p>
+							<p className="text-muted-foreground mb-2 font-medium">Colors</p>
 							<div className="flex flex-wrap gap-2">
 								{product.colors.map((c) => (
 									<Badge key={c} variant="outline">

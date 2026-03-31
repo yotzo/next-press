@@ -17,7 +17,7 @@ import { Input } from "#/components/ui/input";
 import { Label } from "#/components/ui/label";
 import { Separator } from "#/components/ui/separator";
 import { Slider } from "#/components/ui/slider";
-import { formatProductPrice, PRODUCTS, type Product } from "#/lib/products";
+import { formatProductPrice, PRODUCTS, type Product } from "#/helpers/products";
 
 export const Route = createFileRoute("/(main)/_layout/shop/products")({
 	component: ShopProductsPage,

@@ -13,7 +13,7 @@ import {
 	CardHeader,
 	CardTitle,
 } from "#/components/ui/card";
-import { findProductByParam } from "#/lib/products";
+import { findProductByParam } from "#/helpers/products";
 
 export const Route = createFileRoute("/(main)/_layout/shop/$productId")({
 	loader: ({ params }) => {
@@ -50,9 +50,11 @@ function ProductNotFound() {
 function ProductPage() {
 	const { product } = Route.useLoaderData();
 	const images =
-		product.images?.length > 0 ? product.images : product.imageUrl
-			? [product.imageUrl]
-			: [];
+		product.images?.length > 0
+			? product.images
+			: product.imageUrl
+				? [product.imageUrl]
+				: [];
 
 	useEffect(() => {
 		document.title = product.seoTitle;
