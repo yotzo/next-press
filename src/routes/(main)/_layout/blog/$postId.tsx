@@ -233,7 +233,7 @@ function PostPage() {
 						<img
 							src={article.coverImage}
 							alt=""
-							className="aspect-[21/9] w-full object-cover"
+							className="aspect-21/9 w-full object-cover"
 							width={1600}
 							height={686}
 						/>
