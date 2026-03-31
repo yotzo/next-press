@@ -14,6 +14,7 @@ import { Route as AdminLayoutRouteImport } from './routes/admin/_layout'
 import { Route as mainLayoutRouteImport } from './routes/(main)/_layout'
 import { Route as mainLayoutIndexRouteImport } from './routes/(main)/_layout/index'
 import { Route as AdminLayoutUsersRouteImport } from './routes/admin/_layout/users'
+import { Route as AdminLayoutProductsRouteImport } from './routes/admin/_layout/products'
 import { Route as AdminLayoutDashboardRouteImport } from './routes/admin/_layout/dashboard'
 import { Route as mainLayoutContactsRouteImport } from './routes/(main)/_layout/contacts'
 import { Route as mainLayoutAboutRouteImport } from './routes/(main)/_layout/about'
@@ -45,6 +46,11 @@ const mainLayoutIndexRoute = mainLayoutIndexRouteImport.update({
 const AdminLayoutUsersRoute = AdminLayoutUsersRouteImport.update({
   id: '/users',
   path: '/users',
+  getParentRoute: () => AdminLayoutRoute,
+} as any)
+const AdminLayoutProductsRoute = AdminLayoutProductsRouteImport.update({
+  id: '/products',
+  path: '/products',
   getParentRoute: () => AdminLayoutRoute,
 } as any)
 const AdminLayoutDashboardRoute = AdminLayoutDashboardRouteImport.update({
@@ -94,6 +100,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof mainLayoutAboutRoute
   '/contacts': typeof mainLayoutContactsRoute
   '/admin/dashboard': typeof AdminLayoutDashboardRoute
+  '/admin/products': typeof AdminLayoutProductsRoute
   '/admin/users': typeof AdminLayoutUsersRoute
   '/': typeof mainLayoutIndexRoute
   '/blog/$postId': typeof mainLayoutBlogPostIdRoute
@@ -107,6 +114,7 @@ export interface FileRoutesByTo {
   '/about': typeof mainLayoutAboutRoute
   '/contacts': typeof mainLayoutContactsRoute
   '/admin/dashboard': typeof AdminLayoutDashboardRoute
+  '/admin/products': typeof AdminLayoutProductsRoute
   '/admin/users': typeof AdminLayoutUsersRoute
   '/': typeof mainLayoutIndexRoute
   '/blog/$postId': typeof mainLayoutBlogPostIdRoute
@@ -123,6 +131,7 @@ export interface FileRoutesById {
   '/(main)/_layout/about': typeof mainLayoutAboutRoute
   '/(main)/_layout/contacts': typeof mainLayoutContactsRoute
   '/admin/_layout/dashboard': typeof AdminLayoutDashboardRoute
+  '/admin/_layout/products': typeof AdminLayoutProductsRoute
   '/admin/_layout/users': typeof AdminLayoutUsersRoute
   '/(main)/_layout/': typeof mainLayoutIndexRoute
   '/(main)/_layout/blog/$postId': typeof mainLayoutBlogPostIdRoute
@@ -139,6 +148,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/contacts'
     | '/admin/dashboard'
+    | '/admin/products'
     | '/admin/users'
     | '/'
     | '/blog/$postId'
@@ -152,6 +162,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/contacts'
     | '/admin/dashboard'
+    | '/admin/products'
     | '/admin/users'
     | '/'
     | '/blog/$postId'
@@ -167,6 +178,7 @@ export interface FileRouteTypes {
     | '/(main)/_layout/about'
     | '/(main)/_layout/contacts'
     | '/admin/_layout/dashboard'
+    | '/admin/_layout/products'
     | '/admin/_layout/users'
     | '/(main)/_layout/'
     | '/(main)/_layout/blog/$postId'
@@ -217,6 +229,13 @@ declare module '@tanstack/react-router' {
       path: '/users'
       fullPath: '/admin/users'
       preLoaderRoute: typeof AdminLayoutUsersRouteImport
+      parentRoute: typeof AdminLayoutRoute
+    }
+    '/admin/_layout/products': {
+      id: '/admin/_layout/products'
+      path: '/products'
+      fullPath: '/admin/products'
+      preLoaderRoute: typeof AdminLayoutProductsRouteImport
       parentRoute: typeof AdminLayoutRoute
     }
     '/admin/_layout/dashboard': {
@@ -306,11 +325,13 @@ const mainLayoutRouteWithChildren = mainLayoutRoute._addFileChildren(
 
 interface AdminLayoutRouteChildren {
   AdminLayoutDashboardRoute: typeof AdminLayoutDashboardRoute
+  AdminLayoutProductsRoute: typeof AdminLayoutProductsRoute
   AdminLayoutUsersRoute: typeof AdminLayoutUsersRoute
 }
 
 const AdminLayoutRouteChildren: AdminLayoutRouteChildren = {
   AdminLayoutDashboardRoute: AdminLayoutDashboardRoute,
+  AdminLayoutProductsRoute: AdminLayoutProductsRoute,
   AdminLayoutUsersRoute: AdminLayoutUsersRoute,
 }
 
