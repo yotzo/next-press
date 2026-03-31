@@ -9,103 +9,180 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as AboutRouteImport } from './routes/about'
-import { Route as IndexRouteImport } from './routes/index'
-import { Route as AdminIndexRouteImport } from './routes/admin/index'
-import { Route as Admin_layoutRouteImport } from './routes/admin/__layout'
+import { Route as mainLayoutRouteImport } from './routes/(main)/_layout'
+import { Route as adminAdminRouteImport } from './routes/(admin)/admin'
+import { Route as adminLayoutRouteImport } from './routes/(admin)/_layout'
+import { Route as mainLayoutIndexRouteImport } from './routes/(main)/_layout/index'
+import { Route as mainLayoutBlogRouteImport } from './routes/(main)/_layout/blog'
+import { Route as mainLayoutAboutRouteImport } from './routes/(main)/_layout/about'
+import { Route as adminLayoutDashboardRouteImport } from './routes/(admin)/_layout/dashboard'
 
-const AboutRoute = AboutRouteImport.update({
-  id: '/about',
-  path: '/about',
+const mainLayoutRoute = mainLayoutRouteImport.update({
+  id: '/(main)/_layout',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AdminIndexRoute = AdminIndexRouteImport.update({
-  id: '/admin/',
-  path: '/admin/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const Admin_layoutRoute = Admin_layoutRouteImport.update({
-  id: '/admin/__layout',
+const adminAdminRoute = adminAdminRouteImport.update({
+  id: '/(admin)/admin',
   path: '/admin',
   getParentRoute: () => rootRouteImport,
 } as any)
+const adminLayoutRoute = adminLayoutRouteImport.update({
+  id: '/(admin)/_layout',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const mainLayoutIndexRoute = mainLayoutIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => mainLayoutRoute,
+} as any)
+const mainLayoutBlogRoute = mainLayoutBlogRouteImport.update({
+  id: '/blog',
+  path: '/blog',
+  getParentRoute: () => mainLayoutRoute,
+} as any)
+const mainLayoutAboutRoute = mainLayoutAboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => mainLayoutRoute,
+} as any)
+const adminLayoutDashboardRoute = adminLayoutDashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => adminLayoutRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/admin': typeof Admin_layoutRoute
-  '/admin/': typeof AdminIndexRoute
+  '/admin': typeof adminAdminRoute
+  '/dashboard': typeof adminLayoutDashboardRoute
+  '/about': typeof mainLayoutAboutRoute
+  '/blog': typeof mainLayoutBlogRoute
+  '/': typeof mainLayoutIndexRoute
 }
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/admin': typeof AdminIndexRoute
+  '/admin': typeof adminAdminRoute
+  '/dashboard': typeof adminLayoutDashboardRoute
+  '/about': typeof mainLayoutAboutRoute
+  '/blog': typeof mainLayoutBlogRoute
+  '/': typeof mainLayoutIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
-  '/': typeof IndexRoute
-  '/about': typeof AboutRoute
-  '/admin/__layout': typeof Admin_layoutRoute
-  '/admin/': typeof AdminIndexRoute
+  '/(admin)/_layout': typeof adminLayoutRouteWithChildren
+  '/(admin)/admin': typeof adminAdminRoute
+  '/(main)/_layout': typeof mainLayoutRouteWithChildren
+  '/(admin)/_layout/dashboard': typeof adminLayoutDashboardRoute
+  '/(main)/_layout/about': typeof mainLayoutAboutRoute
+  '/(main)/_layout/blog': typeof mainLayoutBlogRoute
+  '/(main)/_layout/': typeof mainLayoutIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/admin' | '/admin/'
+  fullPaths: '/admin' | '/dashboard' | '/about' | '/blog' | '/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/admin'
-  id: '__root__' | '/' | '/about' | '/admin/__layout' | '/admin/'
+  to: '/admin' | '/dashboard' | '/about' | '/blog' | '/'
+  id:
+    | '__root__'
+    | '/(admin)/_layout'
+    | '/(admin)/admin'
+    | '/(main)/_layout'
+    | '/(admin)/_layout/dashboard'
+    | '/(main)/_layout/about'
+    | '/(main)/_layout/blog'
+    | '/(main)/_layout/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
-  AboutRoute: typeof AboutRoute
-  Admin_layoutRoute: typeof Admin_layoutRoute
-  AdminIndexRoute: typeof AdminIndexRoute
+  adminLayoutRoute: typeof adminLayoutRouteWithChildren
+  adminAdminRoute: typeof adminAdminRoute
+  mainLayoutRoute: typeof mainLayoutRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/about': {
-      id: '/about'
-      path: '/about'
-      fullPath: '/about'
-      preLoaderRoute: typeof AboutRouteImport
+    '/(main)/_layout': {
+      id: '/(main)/_layout'
+      path: ''
+      fullPath: ''
+      preLoaderRoute: typeof mainLayoutRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/admin/': {
-      id: '/admin/'
-      path: '/admin'
-      fullPath: '/admin/'
-      preLoaderRoute: typeof AdminIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/admin/__layout': {
-      id: '/admin/__layout'
+    '/(admin)/admin': {
+      id: '/(admin)/admin'
       path: '/admin'
       fullPath: '/admin'
-      preLoaderRoute: typeof Admin_layoutRouteImport
+      preLoaderRoute: typeof adminAdminRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/(admin)/_layout': {
+      id: '/(admin)/_layout'
+      path: ''
+      fullPath: ''
+      preLoaderRoute: typeof adminLayoutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(main)/_layout/': {
+      id: '/(main)/_layout/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof mainLayoutIndexRouteImport
+      parentRoute: typeof mainLayoutRoute
+    }
+    '/(main)/_layout/blog': {
+      id: '/(main)/_layout/blog'
+      path: '/blog'
+      fullPath: '/blog'
+      preLoaderRoute: typeof mainLayoutBlogRouteImport
+      parentRoute: typeof mainLayoutRoute
+    }
+    '/(main)/_layout/about': {
+      id: '/(main)/_layout/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof mainLayoutAboutRouteImport
+      parentRoute: typeof mainLayoutRoute
+    }
+    '/(admin)/_layout/dashboard': {
+      id: '/(admin)/_layout/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof adminLayoutDashboardRouteImport
+      parentRoute: typeof adminLayoutRoute
     }
   }
 }
 
+interface adminLayoutRouteChildren {
+  adminLayoutDashboardRoute: typeof adminLayoutDashboardRoute
+}
+
+const adminLayoutRouteChildren: adminLayoutRouteChildren = {
+  adminLayoutDashboardRoute: adminLayoutDashboardRoute,
+}
+
+const adminLayoutRouteWithChildren = adminLayoutRoute._addFileChildren(
+  adminLayoutRouteChildren,
+)
+
+interface mainLayoutRouteChildren {
+  mainLayoutAboutRoute: typeof mainLayoutAboutRoute
+  mainLayoutBlogRoute: typeof mainLayoutBlogRoute
+  mainLayoutIndexRoute: typeof mainLayoutIndexRoute
+}
+
+const mainLayoutRouteChildren: mainLayoutRouteChildren = {
+  mainLayoutAboutRoute: mainLayoutAboutRoute,
+  mainLayoutBlogRoute: mainLayoutBlogRoute,
+  mainLayoutIndexRoute: mainLayoutIndexRoute,
+}
+
+const mainLayoutRouteWithChildren = mainLayoutRoute._addFileChildren(
+  mainLayoutRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
-  IndexRoute: IndexRoute,
-  AboutRoute: AboutRoute,
-  Admin_layoutRoute: Admin_layoutRoute,
-  AdminIndexRoute: AdminIndexRoute,
+  adminLayoutRoute: adminLayoutRouteWithChildren,
+  adminAdminRoute: adminAdminRoute,
+  mainLayoutRoute: mainLayoutRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
