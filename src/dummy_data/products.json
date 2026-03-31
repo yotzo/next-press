@@ -1,0 +1,68 @@
+{
+	"products": [
+		{
+			"id": "1",
+			"name": "Studio Notebook",
+			"description": "Lay-flat binding, archival paper, dot grid.",
+			"price": 24,
+			"category": "Stationery",
+			"imageUrl": "https://picsum.photos/seed/nextpress-notebook/640/480"
+		},
+		{
+			"id": "2",
+			"name": "Linen Tote",
+			"description": "Heavyweight linen with interior pocket.",
+			"price": 48,
+			"category": "Apparel",
+			"imageUrl": "https://picsum.photos/seed/nextpress-tote/640/480"
+		},
+		{
+			"id": "3",
+			"name": "Ceramic Mug",
+			"description": "Matte glaze, microwave safe.",
+			"price": 22,
+			"category": "Home",
+			"imageUrl": "https://picsum.photos/seed/nextpress-mug/640/480"
+		},
+		{
+			"id": "4",
+			"name": "Screen Print — Waves",
+			"description": "Limited edition three-color print on cotton paper.",
+			"price": 85,
+			"category": "Prints",
+			"imageUrl": "https://picsum.photos/seed/nextpress-waves/640/480"
+		},
+		{
+			"id": "5",
+			"name": "Wax Seal Set",
+			"description": "Brass stamp, two wax sticks, gift box.",
+			"price": 36,
+			"category": "Stationery",
+			"imageUrl": "https://picsum.photos/seed/nextpress-wax/640/480"
+		},
+		{
+			"id": "6",
+			"name": "Organic Tee",
+			"description": "Relaxed fit, garment dyed, unisex sizing.",
+			"price": 42,
+			"category": "Apparel",
+			"imageUrl": "https://picsum.photos/seed/nextpress-tee/640/480"
+		},
+		{
+			"id": "7",
+			"name": "Desk Calendar",
+			"description": "Minimal month cards with oak stand.",
+			"price": 32,
+			"category": "Stationery",
+			"imageUrl": "https://picsum.photos/seed/nextpress-calendar/640/480"
+		},
+		{
+			"id": "8",
+			"name": "Art Print — Blocks",
+			"description": "Open edition giclée on textured stock.",
+			"price": 58,
+			"category": "Prints",
+			"imageUrl": "https://picsum.photos/seed/nextpress-blocks/640/480"
+		}
+	]
+}

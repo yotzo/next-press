@@ -5,13 +5,15 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 
 const navItems: Array<{
-	to: "/" | "/about" | "/blog" | "/contacts";
+	to: "/" | "/about" | "/blog" | "/shop" | "/shop/products" | "/contacts";
 	label: string;
 	exact?: true;
 }> = [
 	{ to: "/", label: "Home", exact: true },
 	{ to: "/about", label: "About" },
 	{ to: "/blog", label: "Blog" },
+	{ to: "/shop", label: "Shop" },
+	{ to: "/shop/products", label: "Products" },
 	{ to: "/contacts", label: "Contacts" },
 ];
 

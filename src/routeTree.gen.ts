@@ -17,7 +17,10 @@ import { Route as AdminLayoutUsersRouteImport } from './routes/admin/_layout/use
 import { Route as AdminLayoutDashboardRouteImport } from './routes/admin/_layout/dashboard'
 import { Route as mainLayoutContactsRouteImport } from './routes/(main)/_layout/contacts'
 import { Route as mainLayoutAboutRouteImport } from './routes/(main)/_layout/about'
+import { Route as mainLayoutShopIndexRouteImport } from './routes/(main)/_layout/shop/index'
 import { Route as mainLayoutBlogIndexRouteImport } from './routes/(main)/_layout/blog/index'
+import { Route as mainLayoutShopProductsRouteImport } from './routes/(main)/_layout/shop/products'
+import { Route as mainLayoutShopProductIdRouteImport } from './routes/(main)/_layout/shop/$productId'
 import { Route as mainLayoutBlogPostIdRouteImport } from './routes/(main)/_layout/blog/$postId'
 
 const AdminIndexRoute = AdminIndexRouteImport.update({
@@ -59,9 +62,24 @@ const mainLayoutAboutRoute = mainLayoutAboutRouteImport.update({
   path: '/about',
   getParentRoute: () => mainLayoutRoute,
 } as any)
+const mainLayoutShopIndexRoute = mainLayoutShopIndexRouteImport.update({
+  id: '/shop/',
+  path: '/shop/',
+  getParentRoute: () => mainLayoutRoute,
+} as any)
 const mainLayoutBlogIndexRoute = mainLayoutBlogIndexRouteImport.update({
   id: '/blog/',
   path: '/blog/',
+  getParentRoute: () => mainLayoutRoute,
+} as any)
+const mainLayoutShopProductsRoute = mainLayoutShopProductsRouteImport.update({
+  id: '/shop/products',
+  path: '/shop/products',
+  getParentRoute: () => mainLayoutRoute,
+} as any)
+const mainLayoutShopProductIdRoute = mainLayoutShopProductIdRouteImport.update({
+  id: '/shop/$productId',
+  path: '/shop/$productId',
   getParentRoute: () => mainLayoutRoute,
 } as any)
 const mainLayoutBlogPostIdRoute = mainLayoutBlogPostIdRouteImport.update({
@@ -79,7 +97,10 @@ export interface FileRoutesByFullPath {
   '/admin/users': typeof AdminLayoutUsersRoute
   '/': typeof mainLayoutIndexRoute
   '/blog/$postId': typeof mainLayoutBlogPostIdRoute
+  '/shop/$productId': typeof mainLayoutShopProductIdRoute
+  '/shop/products': typeof mainLayoutShopProductsRoute
   '/blog/': typeof mainLayoutBlogIndexRoute
+  '/shop/': typeof mainLayoutShopIndexRoute
 }
 export interface FileRoutesByTo {
   '/admin': typeof AdminIndexRoute
@@ -89,7 +110,10 @@ export interface FileRoutesByTo {
   '/admin/users': typeof AdminLayoutUsersRoute
   '/': typeof mainLayoutIndexRoute
   '/blog/$postId': typeof mainLayoutBlogPostIdRoute
+  '/shop/$productId': typeof mainLayoutShopProductIdRoute
+  '/shop/products': typeof mainLayoutShopProductsRoute
   '/blog': typeof mainLayoutBlogIndexRoute
+  '/shop': typeof mainLayoutShopIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -102,7 +126,10 @@ export interface FileRoutesById {
   '/admin/_layout/users': typeof AdminLayoutUsersRoute
   '/(main)/_layout/': typeof mainLayoutIndexRoute
   '/(main)/_layout/blog/$postId': typeof mainLayoutBlogPostIdRoute
+  '/(main)/_layout/shop/$productId': typeof mainLayoutShopProductIdRoute
+  '/(main)/_layout/shop/products': typeof mainLayoutShopProductsRoute
   '/(main)/_layout/blog/': typeof mainLayoutBlogIndexRoute
+  '/(main)/_layout/shop/': typeof mainLayoutShopIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -115,7 +142,10 @@ export interface FileRouteTypes {
     | '/admin/users'
     | '/'
     | '/blog/$postId'
+    | '/shop/$productId'
+    | '/shop/products'
     | '/blog/'
+    | '/shop/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/admin'
@@ -125,7 +155,10 @@ export interface FileRouteTypes {
     | '/admin/users'
     | '/'
     | '/blog/$postId'
+    | '/shop/$productId'
+    | '/shop/products'
     | '/blog'
+    | '/shop'
   id:
     | '__root__'
     | '/(main)/_layout'
@@ -137,7 +170,10 @@ export interface FileRouteTypes {
     | '/admin/_layout/users'
     | '/(main)/_layout/'
     | '/(main)/_layout/blog/$postId'
+    | '/(main)/_layout/shop/$productId'
+    | '/(main)/_layout/shop/products'
     | '/(main)/_layout/blog/'
+    | '/(main)/_layout/shop/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -204,11 +240,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof mainLayoutAboutRouteImport
       parentRoute: typeof mainLayoutRoute
     }
+    '/(main)/_layout/shop/': {
+      id: '/(main)/_layout/shop/'
+      path: '/shop'
+      fullPath: '/shop/'
+      preLoaderRoute: typeof mainLayoutShopIndexRouteImport
+      parentRoute: typeof mainLayoutRoute
+    }
     '/(main)/_layout/blog/': {
       id: '/(main)/_layout/blog/'
       path: '/blog'
       fullPath: '/blog/'
       preLoaderRoute: typeof mainLayoutBlogIndexRouteImport
+      parentRoute: typeof mainLayoutRoute
+    }
+    '/(main)/_layout/shop/products': {
+      id: '/(main)/_layout/shop/products'
+      path: '/shop/products'
+      fullPath: '/shop/products'
+      preLoaderRoute: typeof mainLayoutShopProductsRouteImport
+      parentRoute: typeof mainLayoutRoute
+    }
+    '/(main)/_layout/shop/$productId': {
+      id: '/(main)/_layout/shop/$productId'
+      path: '/shop/$productId'
+      fullPath: '/shop/$productId'
+      preLoaderRoute: typeof mainLayoutShopProductIdRouteImport
       parentRoute: typeof mainLayoutRoute
     }
     '/(main)/_layout/blog/$postId': {
@@ -226,7 +283,10 @@ interface mainLayoutRouteChildren {
   mainLayoutContactsRoute: typeof mainLayoutContactsRoute
   mainLayoutIndexRoute: typeof mainLayoutIndexRoute
   mainLayoutBlogPostIdRoute: typeof mainLayoutBlogPostIdRoute
+  mainLayoutShopProductIdRoute: typeof mainLayoutShopProductIdRoute
+  mainLayoutShopProductsRoute: typeof mainLayoutShopProductsRoute
   mainLayoutBlogIndexRoute: typeof mainLayoutBlogIndexRoute
+  mainLayoutShopIndexRoute: typeof mainLayoutShopIndexRoute
 }
 
 const mainLayoutRouteChildren: mainLayoutRouteChildren = {
@@ -234,7 +294,10 @@ const mainLayoutRouteChildren: mainLayoutRouteChildren = {
   mainLayoutContactsRoute: mainLayoutContactsRoute,
   mainLayoutIndexRoute: mainLayoutIndexRoute,
   mainLayoutBlogPostIdRoute: mainLayoutBlogPostIdRoute,
+  mainLayoutShopProductIdRoute: mainLayoutShopProductIdRoute,
+  mainLayoutShopProductsRoute: mainLayoutShopProductsRoute,
   mainLayoutBlogIndexRoute: mainLayoutBlogIndexRoute,
+  mainLayoutShopIndexRoute: mainLayoutShopIndexRoute,
 }
 
 const mainLayoutRouteWithChildren = mainLayoutRoute._addFileChildren(
