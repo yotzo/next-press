@@ -24,8 +24,8 @@ function RouteComponent() {
 			<AdminSidebar />
 			<SidebarInset>
 				<HeaderAdmin />
-				<div className="flex min-h-screen w-full bg-background pt-6">
-					<div className="flex min-w-0 flex-1 flex-col">
+				<div className="flex min-h-screen min-w-0 w-full bg-background pt-6">
+					<div className="flex w-full flex-1 flex-col">
 						<Outlet />
 						<Toaster />
 					</div>

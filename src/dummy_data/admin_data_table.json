@@ -1,614 +1,650 @@
 [
 	{
 		"id": 1,
-		"header": "Cover page",
-		"type": "Cover page",
-		"status": "In Process",
-		"target": "18",
-		"limit": "5",
-		"reviewer": "Eddie Lake"
+		"header": "Why we chose TanStack Router for admin UX",
+		"type": "Guide",
+		"status": "In review",
+		"target": "217",
+		"limit": "20",
+		"reviewer": "Emma Davis"
 	},
 	{
 		"id": 2,
-		"header": "Table of contents",
-		"type": "Table of contents",
-		"status": "Done",
-		"target": "29",
-		"limit": "24",
-		"reviewer": "Eddie Lake"
+		"header": "Drafting posts faster with keyboard shortcuts",
+		"type": "Tutorial",
+		"status": "Published",
+		"target": "761",
+		"limit": "14",
+		"reviewer": "Jamik Tashpulatov"
 	},
 	{
 		"id": 3,
-		"header": "Executive summary",
-		"type": "Narrative",
-		"status": "Done",
-		"target": "10",
-		"limit": "13",
-		"reviewer": "Eddie Lake"
+		"header": "Shipping dark mode without thrashing your CSS variables",
+		"type": "News",
+		"status": "Draft",
+		"target": "693",
+		"limit": "12",
+		"reviewer": "Daniel Park"
 	},
 	{
 		"id": 4,
-		"header": "Technical approach",
-		"type": "Narrative",
-		"status": "Done",
-		"target": "27",
-		"limit": "23",
+		"header": "A pragmatic checklist before you publish",
+		"type": "Product",
+		"status": "Published",
+		"target": "596",
+		"limit": "3",
 		"reviewer": "Jamik Tashpulatov"
 	},
 	{
 		"id": 5,
-		"header": "Design",
-		"type": "Narrative",
-		"status": "In Process",
-		"target": "2",
-		"limit": "16",
-		"reviewer": "Jamik Tashpulatov"
+		"header": "How we cut bundle size for the public blog",
+		"type": "Guide",
+		"status": "Draft",
+		"target": "597",
+		"limit": "4",
+		"reviewer": "Emma Davis"
 	},
 	{
 		"id": 6,
-		"header": "Capabilities",
-		"type": "Narrative",
-		"status": "In Process",
-		"target": "20",
+		"header": "Content modeling: tags, series, and canonical URLs",
+		"type": "Engineering",
+		"status": "Draft",
+		"target": "645",
 		"limit": "8",
-		"reviewer": "Jamik Tashpulatov"
+		"reviewer": "Assign reviewer"
 	},
 	{
 		"id": 7,
-		"header": "Integration with existing systems",
-		"type": "Narrative",
-		"status": "In Process",
-		"target": "19",
+		"header": "Preview deployments for writers (and reviewers)",
+		"type": "Engineering",
+		"status": "In review",
+		"target": "1153",
+		"limit": "10",
+		"reviewer": "Daniel Park"
+	},
+	{
+		"id": 8,
+		"header": "Accessible tables for editorial dashboards",
+		"type": "Guide",
+		"status": "Draft",
+		"target": "966",
 		"limit": "21",
 		"reviewer": "Jamik Tashpulatov"
 	},
 	{
-		"id": 8,
-		"header": "Innovation and Advantages",
-		"type": "Narrative",
-		"status": "Done",
-		"target": "25",
-		"limit": "26",
-		"reviewer": "Assign reviewer"
-	},
-	{
 		"id": 9,
-		"header": "Overview of EMR's Innovative Solutions",
-		"type": "Technical content",
-		"status": "Done",
-		"target": "7",
-		"limit": "23",
-		"reviewer": "Assign reviewer"
+		"header": "Migrating Markdown without breaking old links",
+		"type": "Engineering",
+		"status": "In review",
+		"target": "1168",
+		"limit": "3",
+		"reviewer": "Daniel Park"
 	},
 	{
 		"id": 10,
-		"header": "Advanced Algorithms and Machine Learning",
-		"type": "Narrative",
-		"status": "Done",
-		"target": "30",
-		"limit": "28",
-		"reviewer": "Assign reviewer"
+		"header": "Search that respects drafts and permissions",
+		"type": "Opinion",
+		"status": "Draft",
+		"target": "468",
+		"limit": "7",
+		"reviewer": "Daniel Park"
 	},
 	{
 		"id": 11,
-		"header": "Adaptive Communication Protocols",
-		"type": "Narrative",
-		"status": "Done",
-		"target": "9",
-		"limit": "31",
-		"reviewer": "Assign reviewer"
+		"header": "RSS feeds readers actually subscribe to",
+		"type": "Guide",
+		"status": "Published",
+		"target": "719",
+		"limit": "16",
+		"reviewer": "Emily Whalen"
 	},
 	{
 		"id": 12,
-		"header": "Advantages Over Current Technologies",
-		"type": "Narrative",
-		"status": "Done",
-		"target": "12",
-		"limit": "0",
-		"reviewer": "Assign reviewer"
+		"header": "Open Graph images at scale with Sharp",
+		"type": "Guide",
+		"status": "In review",
+		"target": "541",
+		"limit": "14",
+		"reviewer": "Jamik Tashpulatov"
 	},
 	{
 		"id": 13,
-		"header": "Past Performance",
-		"type": "Narrative",
-		"status": "Done",
-		"target": "22",
-		"limit": "33",
-		"reviewer": "Assign reviewer"
+		"header": "When to use MDX—and when plain Markdown wins",
+		"type": "Tutorial",
+		"status": "Published",
+		"target": "1022",
+		"limit": "11",
+		"reviewer": "Emma Davis"
 	},
 	{
 		"id": 14,
-		"header": "Customer Feedback and Satisfaction Levels",
-		"type": "Narrative",
-		"status": "Done",
-		"target": "15",
-		"limit": "34",
+		"header": "Editorial workflow: from idea to scheduled post",
+		"type": "Opinion",
+		"status": "Published",
+		"target": "995",
+		"limit": "6",
 		"reviewer": "Assign reviewer"
 	},
 	{
 		"id": 15,
-		"header": "Implementation Challenges and Solutions",
-		"type": "Narrative",
-		"status": "Done",
-		"target": "3",
-		"limit": "35",
-		"reviewer": "Assign reviewer"
+		"header": "Caching strategies for mostly-static article pages",
+		"type": "Product",
+		"status": "Published",
+		"target": "1172",
+		"limit": "7",
+		"reviewer": "Emma Davis"
 	},
 	{
 		"id": 16,
-		"header": "Security Measures and Data Protection Policies",
-		"type": "Narrative",
-		"status": "In Process",
-		"target": "6",
-		"limit": "36",
-		"reviewer": "Assign reviewer"
+		"header": "Structured data for articles: JSON-LD in practice",
+		"type": "Company",
+		"status": "In review",
+		"target": "694",
+		"limit": "13",
+		"reviewer": "Emily Whalen"
 	},
 	{
 		"id": 17,
-		"header": "Scalability and Future Proofing",
-		"type": "Narrative",
-		"status": "Done",
-		"target": "4",
-		"limit": "37",
-		"reviewer": "Assign reviewer"
+		"header": "Comment moderation at small teams",
+		"type": "Guide",
+		"status": "Published",
+		"target": "848",
+		"limit": "13",
+		"reviewer": "Daniel Park"
 	},
 	{
 		"id": 18,
-		"header": "Cost-Benefit Analysis",
-		"type": "Plain language",
-		"status": "Done",
-		"target": "14",
-		"limit": "38",
-		"reviewer": "Assign reviewer"
+		"header": "Internationalization for dates and bylines",
+		"type": "Opinion",
+		"status": "Draft",
+		"target": "654",
+		"limit": "17",
+		"reviewer": "Emily Whalen"
 	},
 	{
 		"id": 19,
-		"header": "User Training and Onboarding Experience",
-		"type": "Narrative",
-		"status": "Done",
-		"target": "17",
-		"limit": "39",
-		"reviewer": "Assign reviewer"
+		"header": "Image lazy loading and LCP on long reads",
+		"type": "Guide",
+		"status": "Draft",
+		"target": "639",
+		"limit": "24",
+		"reviewer": "Emily Whalen"
 	},
 	{
 		"id": 20,
-		"header": "Future Development Roadmap",
-		"type": "Narrative",
-		"status": "Done",
-		"target": "11",
-		"limit": "40",
-		"reviewer": "Assign reviewer"
+		"header": "Newsletter republishing from the same CMS",
+		"type": "News",
+		"status": "Draft",
+		"target": "1188",
+		"limit": "23",
+		"reviewer": "Daniel Park"
 	},
 	{
 		"id": 21,
-		"header": "System Architecture Overview",
-		"type": "Technical content",
-		"status": "In Process",
-		"target": "24",
-		"limit": "18",
-		"reviewer": "Maya Johnson"
+		"header": "Version history for collaborative editing",
+		"type": "Engineering",
+		"status": "Published",
+		"target": "278",
+		"limit": "15",
+		"reviewer": "Daniel Park"
 	},
 	{
 		"id": 22,
-		"header": "Risk Management Plan",
-		"type": "Narrative",
-		"status": "Done",
-		"target": "15",
-		"limit": "22",
-		"reviewer": "Carlos Rodriguez"
+		"header": "Soft deletes vs trash bin for posts",
+		"type": "Company",
+		"status": "Published",
+		"target": "998",
+		"limit": "9",
+		"reviewer": "Daniel Park"
 	},
 	{
 		"id": 23,
-		"header": "Compliance Documentation",
-		"type": "Legal",
-		"status": "In Process",
-		"target": "31",
-		"limit": "27",
-		"reviewer": "Sarah Chen"
+		"header": "Slug collisions and deterministic redirects",
+		"type": "Tutorial",
+		"status": "Published",
+		"target": "404",
+		"limit": "9",
+		"reviewer": "Emily Whalen"
 	},
 	{
 		"id": 24,
-		"header": "API Documentation",
-		"type": "Technical content",
-		"status": "Done",
-		"target": "8",
-		"limit": "12",
-		"reviewer": "Raj Patel"
+		"header": "Preview tokens without exposing drafts publicly",
+		"type": "Company",
+		"status": "Published",
+		"target": "950",
+		"limit": "5",
+		"reviewer": "Assign reviewer"
 	},
 	{
 		"id": 25,
-		"header": "User Interface Mockups",
-		"type": "Visual",
-		"status": "In Process",
-		"target": "19",
-		"limit": "25",
-		"reviewer": "Leila Ahmadi"
+		"header": "Reading time estimates that feel honest",
+		"type": "Tutorial",
+		"status": "Published",
+		"target": "944",
+		"limit": "21",
+		"reviewer": "Emily Whalen"
 	},
 	{
 		"id": 26,
-		"header": "Database Schema",
-		"type": "Technical content",
-		"status": "Done",
-		"target": "22",
-		"limit": "20",
-		"reviewer": "Thomas Wilson"
+		"header": "Author pages and guest bylines",
+		"type": "Product",
+		"status": "In review",
+		"target": "775",
+		"limit": "6",
+		"reviewer": "Assign reviewer"
 	},
 	{
 		"id": 27,
-		"header": "Testing Methodology",
-		"type": "Technical content",
-		"status": "In Process",
-		"target": "17",
-		"limit": "14",
-		"reviewer": "Assign reviewer"
+		"header": "Related posts without a recommendation engine",
+		"type": "Guide",
+		"status": "In review",
+		"target": "538",
+		"limit": "11",
+		"reviewer": "Daniel Park"
 	},
 	{
 		"id": 28,
-		"header": "Deployment Strategy",
-		"type": "Narrative",
-		"status": "Done",
-		"target": "26",
-		"limit": "30",
-		"reviewer": "Eddie Lake"
+		"header": "Handling footnotes and sidenotes in MDX",
+		"type": "Opinion",
+		"status": "Published",
+		"target": "1184",
+		"limit": "19",
+		"reviewer": "Emily Whalen"
 	},
 	{
 		"id": 29,
-		"header": "Budget Breakdown",
-		"type": "Financial",
-		"status": "In Process",
-		"target": "13",
-		"limit": "16",
-		"reviewer": "Jamik Tashpulatov"
+		"header": "Splitting admin from the marketing site",
+		"type": "Product",
+		"status": "Published",
+		"target": "290",
+		"limit": "5",
+		"reviewer": "Assign reviewer"
 	},
 	{
 		"id": 30,
-		"header": "Market Analysis",
-		"type": "Research",
-		"status": "Done",
-		"target": "29",
-		"limit": "32",
-		"reviewer": "Sophia Martinez"
+		"header": "Rate limiting submission endpoints",
+		"type": "Tutorial",
+		"status": "Published",
+		"target": "509",
+		"limit": "4",
+		"reviewer": "Emily Whalen"
 	},
 	{
 		"id": 31,
-		"header": "Competitor Comparison",
-		"type": "Research",
-		"status": "In Process",
-		"target": "21",
-		"limit": "19",
-		"reviewer": "Assign reviewer"
+		"header": "Audit logs for who changed what",
+		"type": "News",
+		"status": "Draft",
+		"target": "336",
+		"limit": "7",
+		"reviewer": "Jamik Tashpulatov"
 	},
 	{
 		"id": 32,
-		"header": "Maintenance Plan",
-		"type": "Technical content",
-		"status": "Done",
-		"target": "16",
-		"limit": "23",
-		"reviewer": "Alex Thompson"
+		"header": "Feature flags for experimental post layouts",
+		"type": "Tutorial",
+		"status": "Draft",
+		"target": "972",
+		"limit": "5",
+		"reviewer": "Emma Davis"
 	},
 	{
 		"id": 33,
-		"header": "User Personas",
-		"type": "Research",
-		"status": "In Process",
-		"target": "27",
-		"limit": "24",
-		"reviewer": "Nina Patel"
-	},
-	{
-		"id": 34,
-		"header": "Accessibility Compliance",
-		"type": "Legal",
-		"status": "Done",
-		"target": "18",
-		"limit": "21",
-		"reviewer": "Assign reviewer"
-	},
-	{
-		"id": 35,
-		"header": "Performance Metrics",
-		"type": "Technical content",
-		"status": "In Process",
-		"target": "23",
-		"limit": "26",
-		"reviewer": "David Kim"
-	},
-	{
-		"id": 36,
-		"header": "Disaster Recovery Plan",
-		"type": "Technical content",
-		"status": "Done",
-		"target": "14",
-		"limit": "17",
-		"reviewer": "Jamik Tashpulatov"
-	},
-	{
-		"id": 37,
-		"header": "Third-party Integrations",
-		"type": "Technical content",
-		"status": "In Process",
-		"target": "25",
-		"limit": "28",
-		"reviewer": "Eddie Lake"
-	},
-	{
-		"id": 38,
-		"header": "User Feedback Summary",
-		"type": "Research",
-		"status": "Done",
-		"target": "20",
-		"limit": "15",
-		"reviewer": "Assign reviewer"
-	},
-	{
-		"id": 39,
-		"header": "Localization Strategy",
-		"type": "Narrative",
-		"status": "In Process",
-		"target": "12",
-		"limit": "19",
-		"reviewer": "Maria Garcia"
-	},
-	{
-		"id": 40,
-		"header": "Mobile Compatibility",
-		"type": "Technical content",
-		"status": "Done",
-		"target": "28",
-		"limit": "31",
-		"reviewer": "James Wilson"
-	},
-	{
-		"id": 41,
-		"header": "Data Migration Plan",
-		"type": "Technical content",
-		"status": "In Process",
-		"target": "19",
-		"limit": "22",
-		"reviewer": "Assign reviewer"
-	},
-	{
-		"id": 42,
-		"header": "Quality Assurance Protocols",
-		"type": "Technical content",
-		"status": "Done",
-		"target": "30",
-		"limit": "33",
-		"reviewer": "Priya Singh"
-	},
-	{
-		"id": 43,
-		"header": "Stakeholder Analysis",
-		"type": "Research",
-		"status": "In Process",
-		"target": "11",
-		"limit": "14",
-		"reviewer": "Eddie Lake"
-	},
-	{
-		"id": 44,
-		"header": "Environmental Impact Assessment",
-		"type": "Research",
-		"status": "Done",
-		"target": "24",
-		"limit": "27",
-		"reviewer": "Assign reviewer"
-	},
-	{
-		"id": 45,
-		"header": "Intellectual Property Rights",
-		"type": "Legal",
-		"status": "In Process",
-		"target": "17",
-		"limit": "20",
-		"reviewer": "Sarah Johnson"
-	},
-	{
-		"id": 46,
-		"header": "Customer Support Framework",
-		"type": "Narrative",
-		"status": "Done",
-		"target": "22",
-		"limit": "25",
-		"reviewer": "Jamik Tashpulatov"
-	},
-	{
-		"id": 47,
-		"header": "Version Control Strategy",
-		"type": "Technical content",
-		"status": "In Process",
-		"target": "15",
+		"header": "404 and 410 semantics for delisted articles",
+		"type": "Guide",
+		"status": "Draft",
+		"target": "765",
 		"limit": "18",
 		"reviewer": "Assign reviewer"
 	},
 	{
-		"id": 48,
-		"header": "Continuous Integration Pipeline",
-		"type": "Technical content",
-		"status": "Done",
-		"target": "26",
-		"limit": "29",
-		"reviewer": "Michael Chen"
+		"id": 34,
+		"header": "Sitemaps: splitting when you have thousands of URLs",
+		"type": "Opinion",
+		"status": "Published",
+		"target": "347",
+		"limit": "18",
+		"reviewer": "Emma Davis"
 	},
 	{
-		"id": 49,
-		"header": "Regulatory Compliance",
-		"type": "Legal",
-		"status": "In Process",
-		"target": "13",
+		"id": 35,
+		"header": "Canonical tags when syndicating to Dev.to",
+		"type": "Guide",
+		"status": "In review",
+		"target": "367",
 		"limit": "16",
+		"reviewer": "Emma Davis"
+	},
+	{
+		"id": 36,
+		"header": "Draft comments using server components",
+		"type": "Product",
+		"status": "Published",
+		"target": "1004",
+		"limit": "15",
+		"reviewer": "Emily Whalen"
+	},
+	{
+		"id": 37,
+		"header": "Scheduling posts across time zones",
+		"type": "Opinion",
+		"status": "Draft",
+		"target": "828",
+		"limit": "15",
+		"reviewer": "Daniel Park"
+	},
+	{
+		"id": 38,
+		"header": "Compression and CDN caching headers",
+		"type": "Engineering",
+		"status": "Published",
+		"target": "374",
+		"limit": "23",
+		"reviewer": "Emily Whalen"
+	},
+	{
+		"id": 39,
+		"header": "Embedding video without tanking performance",
+		"type": "Company",
+		"status": "Published",
+		"target": "275",
+		"limit": "12",
 		"reviewer": "Assign reviewer"
 	},
 	{
+		"id": 40,
+		"header": "Table of contents generated from headings",
+		"type": "Engineering",
+		"status": "In review",
+		"target": "214",
+		"limit": "17",
+		"reviewer": "Emily Whalen"
+	},
+	{
+		"id": 41,
+		"header": "Print stylesheets for long tutorials",
+		"type": "News",
+		"status": "In review",
+		"target": "334",
+		"limit": "5",
+		"reviewer": "Emily Whalen"
+	},
+	{
+		"id": 42,
+		"header": "Escaping user HTML in rich text fields",
+		"type": "News",
+		"status": "Draft",
+		"target": "1080",
+		"limit": "3",
+		"reviewer": "Assign reviewer"
+	},
+	{
+		"id": 43,
+		"header": "Bots, scrapers, and polite robots.txt",
+		"type": "Tutorial",
+		"status": "In review",
+		"target": "295",
+		"limit": "10",
+		"reviewer": "Assign reviewer"
+	},
+	{
+		"id": 44,
+		"header": "A/B testing titles: ethics and measurement",
+		"type": "Engineering",
+		"status": "Published",
+		"target": "902",
+		"limit": "23",
+		"reviewer": "Emma Davis"
+	},
+	{
+		"id": 45,
+		"header": "Skeleton screens for the posts list",
+		"type": "Tutorial",
+		"status": "In review",
+		"target": "793",
+		"limit": "24",
+		"reviewer": "Daniel Park"
+	},
+	{
+		"id": 46,
+		"header": "Live preview with incremental static regeneration",
+		"type": "Company",
+		"status": "Published",
+		"target": "422",
+		"limit": "5",
+		"reviewer": "Emma Davis"
+	},
+	{
+		"id": 47,
+		"header": "Link rot: periodic checks for external URLs",
+		"type": "Company",
+		"status": "Published",
+		"target": "902",
+		"limit": "23",
+		"reviewer": "Emma Davis"
+	},
+	{
+		"id": 48,
+		"header": "Branded short links for social campaigns",
+		"type": "Opinion",
+		"status": "In review",
+		"target": "844",
+		"limit": "9",
+		"reviewer": "Emily Whalen"
+	},
+	{
+		"id": 49,
+		"header": "Co-author attribution in structured data",
+		"type": "Company",
+		"status": "In review",
+		"target": "1057",
+		"limit": "24",
+		"reviewer": "Emma Davis"
+	},
+	{
 		"id": 50,
-		"header": "User Authentication System",
-		"type": "Technical content",
-		"status": "Done",
-		"target": "28",
-		"limit": "31",
-		"reviewer": "Eddie Lake"
+		"header": "Pinning featured posts on the homepage",
+		"type": "Opinion",
+		"status": "Published",
+		"target": "698",
+		"limit": "17",
+		"reviewer": "Daniel Park"
 	},
 	{
 		"id": 51,
-		"header": "Data Analytics Framework",
-		"type": "Technical content",
-		"status": "In Process",
-		"target": "21",
-		"limit": "24",
-		"reviewer": "Jamik Tashpulatov"
+		"header": "Webhook notifications to Slack on publish",
+		"type": "Product",
+		"status": "In review",
+		"target": "553",
+		"limit": "4",
+		"reviewer": "Daniel Park"
 	},
 	{
 		"id": 52,
-		"header": "Cloud Infrastructure",
-		"type": "Technical content",
-		"status": "Done",
-		"target": "16",
-		"limit": "19",
+		"header": "Graceful degradation when analytics is blocked",
+		"type": "Engineering",
+		"status": "In review",
+		"target": "1060",
+		"limit": "5",
 		"reviewer": "Assign reviewer"
 	},
 	{
 		"id": 53,
-		"header": "Network Security Measures",
-		"type": "Technical content",
-		"status": "In Process",
-		"target": "29",
-		"limit": "32",
-		"reviewer": "Lisa Wong"
+		"header": "Copy paste from Google Docs into MDX",
+		"type": "Company",
+		"status": "Published",
+		"target": "842",
+		"limit": "7",
+		"reviewer": "Emma Davis"
 	},
 	{
 		"id": 54,
-		"header": "Project Timeline",
-		"type": "Planning",
-		"status": "Done",
-		"target": "14",
-		"limit": "17",
-		"reviewer": "Eddie Lake"
-	},
-	{
-		"id": 55,
-		"header": "Resource Allocation",
-		"type": "Planning",
-		"status": "In Process",
-		"target": "27",
-		"limit": "30",
+		"header": "Linting prose for style guides",
+		"type": "Guide",
+		"status": "Draft",
+		"target": "1080",
+		"limit": "3",
 		"reviewer": "Assign reviewer"
 	},
 	{
+		"id": 55,
+		"header": "Automated alt text suggestions: limits and risks",
+		"type": "Product",
+		"status": "In review",
+		"target": "499",
+		"limit": "16",
+		"reviewer": "Emily Whalen"
+	},
+	{
 		"id": 56,
-		"header": "Team Structure and Roles",
-		"type": "Planning",
-		"status": "Done",
-		"target": "20",
-		"limit": "23",
+		"header": "Content security policy for embedded iframes",
+		"type": "Guide",
+		"status": "In review",
+		"target": "451",
+		"limit": "12",
 		"reviewer": "Jamik Tashpulatov"
 	},
 	{
 		"id": 57,
-		"header": "Communication Protocols",
-		"type": "Planning",
-		"status": "In Process",
-		"target": "15",
-		"limit": "18",
-		"reviewer": "Assign reviewer"
+		"header": "Offline drafts in the browser (local-first notes)",
+		"type": "Tutorial",
+		"status": "Published",
+		"target": "974",
+		"limit": "7",
+		"reviewer": "Emily Whalen"
 	},
 	{
 		"id": 58,
-		"header": "Success Metrics",
-		"type": "Planning",
-		"status": "Done",
-		"target": "30",
-		"limit": "33",
-		"reviewer": "Eddie Lake"
+		"header": "Tokenizing long articles for LLM summaries",
+		"type": "News",
+		"status": "Draft",
+		"target": "255",
+		"limit": "14",
+		"reviewer": "Assign reviewer"
 	},
 	{
 		"id": 59,
-		"header": "Internationalization Support",
-		"type": "Technical content",
-		"status": "In Process",
-		"target": "23",
-		"limit": "26",
-		"reviewer": "Jamik Tashpulatov"
+		"header": "Protecting forms with honeypots and Turnstile",
+		"type": "Product",
+		"status": "Published",
+		"target": "914",
+		"limit": "13",
+		"reviewer": "Emily Whalen"
 	},
 	{
 		"id": 60,
-		"header": "Backup and Recovery Procedures",
-		"type": "Technical content",
-		"status": "Done",
-		"target": "18",
-		"limit": "21",
-		"reviewer": "Assign reviewer"
-	},
-	{
-		"id": 61,
-		"header": "Monitoring and Alerting System",
-		"type": "Technical content",
-		"status": "In Process",
-		"target": "25",
-		"limit": "28",
+		"header": "Archiving seasonal campaigns cleanly",
+		"type": "Opinion",
+		"status": "Draft",
+		"target": "423",
+		"limit": "6",
 		"reviewer": "Daniel Park"
 	},
 	{
+		"id": 61,
+		"header": "Scaling file uploads to object storage",
+		"type": "Guide",
+		"status": "In review",
+		"target": "1171",
+		"limit": "6",
+		"reviewer": "Jamik Tashpulatov"
+	},
+	{
 		"id": 62,
-		"header": "Code Review Guidelines",
-		"type": "Technical content",
-		"status": "Done",
-		"target": "12",
-		"limit": "15",
-		"reviewer": "Eddie Lake"
+		"header": "Revalidating caches when an author updates a bio",
+		"type": "Tutorial",
+		"status": "In review",
+		"target": "448",
+		"limit": "9",
+		"reviewer": "Daniel Park"
 	},
 	{
 		"id": 63,
-		"header": "Documentation Standards",
-		"type": "Technical content",
-		"status": "In Process",
-		"target": "27",
-		"limit": "30",
-		"reviewer": "Jamik Tashpulatov"
+		"header": "Writing release notes from shipped blog posts",
+		"type": "Guide",
+		"status": "Published",
+		"target": "983",
+		"limit": "16",
+		"reviewer": "Daniel Park"
 	},
 	{
 		"id": 64,
-		"header": "Release Management Process",
-		"type": "Planning",
-		"status": "Done",
-		"target": "22",
-		"limit": "25",
-		"reviewer": "Assign reviewer"
-	},
-	{
-		"id": 65,
-		"header": "Feature Prioritization Matrix",
-		"type": "Planning",
-		"status": "In Process",
-		"target": "19",
-		"limit": "22",
-		"reviewer": "Emma Davis"
-	},
-	{
-		"id": 66,
-		"header": "Technical Debt Assessment",
-		"type": "Technical content",
-		"status": "Done",
-		"target": "24",
-		"limit": "27",
-		"reviewer": "Eddie Lake"
-	},
-	{
-		"id": 67,
-		"header": "Capacity Planning",
-		"type": "Planning",
-		"status": "In Process",
-		"target": "21",
-		"limit": "24",
+		"header": "Telemetry: what editors need vs what ops need",
+		"type": "News",
+		"status": "Draft",
+		"target": "636",
+		"limit": "21",
 		"reviewer": "Jamik Tashpulatov"
 	},
 	{
+		"id": 65,
+		"header": "Design tokens for article typography",
+		"type": "Opinion",
+		"status": "Published",
+		"target": "863",
+		"limit": "6",
+		"reviewer": "Daniel Park"
+	},
+	{
+		"id": 66,
+		"header": "Running spelling checks in CI for docs",
+		"type": "News",
+		"status": "Published",
+		"target": "938",
+		"limit": "15",
+		"reviewer": "Daniel Park"
+	},
+	{
+		"id": 67,
+		"header": "Minimal cookies for EU-friendly analytics",
+		"type": "Company",
+		"status": "In review",
+		"target": "289",
+		"limit": "4",
+		"reviewer": "Emily Whalen"
+	},
+	{
 		"id": 68,
-		"header": "Service Level Agreements",
-		"type": "Legal",
-		"status": "Done",
-		"target": "26",
-		"limit": "29",
-		"reviewer": "Assign reviewer"
+		"header": "Blue-green deploys when URLs must stay stable",
+		"type": "Engineering",
+		"status": "Published",
+		"target": "1124",
+		"limit": "3",
+		"reviewer": "Emily Whalen"
+	},
+	{
+		"id": 69,
+		"header": "Excerpt fields: hand-written vs auto-generated",
+		"type": "News",
+		"status": "Draft",
+		"target": "1104",
+		"limit": "5",
+		"reviewer": "Emily Whalen"
+	},
+	{
+		"id": 70,
+		"header": "Cross-posting without duplicate content penalties",
+		"type": "Tutorial",
+		"status": "Draft",
+		"target": "501",
+		"limit": "18",
+		"reviewer": "Jamik Tashpulatov"
+	},
+	{
+		"id": 71,
+		"header": "Heartbeats: keeping preview sessions alive",
+		"type": "Opinion",
+		"status": "Draft",
+		"target": "768",
+		"limit": "21",
+		"reviewer": "Daniel Park"
+	},
+	{
+		"id": 72,
+		"header": "Editor onboarding in under ten minutes",
+		"type": "Company",
+		"status": "Draft",
+		"target": "1086",
+		"limit": "9",
+		"reviewer": "Jamik Tashpulatov"
 	}
 ]
