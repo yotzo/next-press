@@ -20,11 +20,11 @@ import { Route as mainLayoutContactsRouteImport } from './routes/(main)/_layout/
 import { Route as mainLayoutAboutRouteImport } from './routes/(main)/_layout/about'
 import { Route as mainLayoutShopIndexRouteImport } from './routes/(main)/_layout/shop/index'
 import { Route as mainLayoutBlogIndexRouteImport } from './routes/(main)/_layout/blog/index'
-import { Route as AdminLayoutBlogPostsRouteImport } from './routes/admin/_layout/blog/posts'
-import { Route as AdminLayoutBlogPostIdRouteImport } from './routes/admin/_layout/blog/$postId'
 import { Route as mainLayoutShopProductsRouteImport } from './routes/(main)/_layout/shop/products'
 import { Route as mainLayoutShopProductIdRouteImport } from './routes/(main)/_layout/shop/$productId'
 import { Route as mainLayoutBlogPostIdRouteImport } from './routes/(main)/_layout/blog/$postId'
+import { Route as AdminLayoutBlogPostsIndexRouteImport } from './routes/admin/_layout/blog/posts/index'
+import { Route as AdminLayoutBlogPostsPostIdRouteImport } from './routes/admin/_layout/blog/posts/$postId'
 
 const AdminIndexRoute = AdminIndexRouteImport.update({
   id: '/admin/',
@@ -80,16 +80,6 @@ const mainLayoutBlogIndexRoute = mainLayoutBlogIndexRouteImport.update({
   path: '/blog/',
   getParentRoute: () => mainLayoutRoute,
 } as any)
-const AdminLayoutBlogPostsRoute = AdminLayoutBlogPostsRouteImport.update({
-  id: '/blog/posts',
-  path: '/blog/posts',
-  getParentRoute: () => AdminLayoutRoute,
-} as any)
-const AdminLayoutBlogPostIdRoute = AdminLayoutBlogPostIdRouteImport.update({
-  id: '/blog/$postId',
-  path: '/blog/$postId',
-  getParentRoute: () => AdminLayoutRoute,
-} as any)
 const mainLayoutShopProductsRoute = mainLayoutShopProductsRouteImport.update({
   id: '/shop/products',
   path: '/shop/products',
@@ -105,6 +95,18 @@ const mainLayoutBlogPostIdRoute = mainLayoutBlogPostIdRouteImport.update({
   path: '/blog/$postId',
   getParentRoute: () => mainLayoutRoute,
 } as any)
+const AdminLayoutBlogPostsIndexRoute =
+  AdminLayoutBlogPostsIndexRouteImport.update({
+    id: '/blog/posts/',
+    path: '/blog/posts/',
+    getParentRoute: () => AdminLayoutRoute,
+  } as any)
+const AdminLayoutBlogPostsPostIdRoute =
+  AdminLayoutBlogPostsPostIdRouteImport.update({
+    id: '/blog/posts/$postId',
+    path: '/blog/posts/$postId',
+    getParentRoute: () => AdminLayoutRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/admin': typeof AdminLayoutRouteWithChildren
@@ -118,10 +120,10 @@ export interface FileRoutesByFullPath {
   '/blog/$postId': typeof mainLayoutBlogPostIdRoute
   '/shop/$productId': typeof mainLayoutShopProductIdRoute
   '/shop/products': typeof mainLayoutShopProductsRoute
-  '/admin/blog/$postId': typeof AdminLayoutBlogPostIdRoute
-  '/admin/blog/posts': typeof AdminLayoutBlogPostsRoute
   '/blog/': typeof mainLayoutBlogIndexRoute
   '/shop/': typeof mainLayoutShopIndexRoute
+  '/admin/blog/posts/$postId': typeof AdminLayoutBlogPostsPostIdRoute
+  '/admin/blog/posts/': typeof AdminLayoutBlogPostsIndexRoute
 }
 export interface FileRoutesByTo {
   '/admin': typeof AdminIndexRoute
@@ -134,10 +136,10 @@ export interface FileRoutesByTo {
   '/blog/$postId': typeof mainLayoutBlogPostIdRoute
   '/shop/$productId': typeof mainLayoutShopProductIdRoute
   '/shop/products': typeof mainLayoutShopProductsRoute
-  '/admin/blog/$postId': typeof AdminLayoutBlogPostIdRoute
-  '/admin/blog/posts': typeof AdminLayoutBlogPostsRoute
   '/blog': typeof mainLayoutBlogIndexRoute
   '/shop': typeof mainLayoutShopIndexRoute
+  '/admin/blog/posts/$postId': typeof AdminLayoutBlogPostsPostIdRoute
+  '/admin/blog/posts': typeof AdminLayoutBlogPostsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -153,10 +155,10 @@ export interface FileRoutesById {
   '/(main)/_layout/blog/$postId': typeof mainLayoutBlogPostIdRoute
   '/(main)/_layout/shop/$productId': typeof mainLayoutShopProductIdRoute
   '/(main)/_layout/shop/products': typeof mainLayoutShopProductsRoute
-  '/admin/_layout/blog/$postId': typeof AdminLayoutBlogPostIdRoute
-  '/admin/_layout/blog/posts': typeof AdminLayoutBlogPostsRoute
   '/(main)/_layout/blog/': typeof mainLayoutBlogIndexRoute
   '/(main)/_layout/shop/': typeof mainLayoutShopIndexRoute
+  '/admin/_layout/blog/posts/$postId': typeof AdminLayoutBlogPostsPostIdRoute
+  '/admin/_layout/blog/posts/': typeof AdminLayoutBlogPostsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -172,10 +174,10 @@ export interface FileRouteTypes {
     | '/blog/$postId'
     | '/shop/$productId'
     | '/shop/products'
-    | '/admin/blog/$postId'
-    | '/admin/blog/posts'
     | '/blog/'
     | '/shop/'
+    | '/admin/blog/posts/$postId'
+    | '/admin/blog/posts/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/admin'
@@ -188,10 +190,10 @@ export interface FileRouteTypes {
     | '/blog/$postId'
     | '/shop/$productId'
     | '/shop/products'
-    | '/admin/blog/$postId'
-    | '/admin/blog/posts'
     | '/blog'
     | '/shop'
+    | '/admin/blog/posts/$postId'
+    | '/admin/blog/posts'
   id:
     | '__root__'
     | '/(main)/_layout'
@@ -206,10 +208,10 @@ export interface FileRouteTypes {
     | '/(main)/_layout/blog/$postId'
     | '/(main)/_layout/shop/$productId'
     | '/(main)/_layout/shop/products'
-    | '/admin/_layout/blog/$postId'
-    | '/admin/_layout/blog/posts'
     | '/(main)/_layout/blog/'
     | '/(main)/_layout/shop/'
+    | '/admin/_layout/blog/posts/$postId'
+    | '/admin/_layout/blog/posts/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -297,20 +299,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof mainLayoutBlogIndexRouteImport
       parentRoute: typeof mainLayoutRoute
     }
-    '/admin/_layout/blog/posts': {
-      id: '/admin/_layout/blog/posts'
-      path: '/blog/posts'
-      fullPath: '/admin/blog/posts'
-      preLoaderRoute: typeof AdminLayoutBlogPostsRouteImport
-      parentRoute: typeof AdminLayoutRoute
-    }
-    '/admin/_layout/blog/$postId': {
-      id: '/admin/_layout/blog/$postId'
-      path: '/blog/$postId'
-      fullPath: '/admin/blog/$postId'
-      preLoaderRoute: typeof AdminLayoutBlogPostIdRouteImport
-      parentRoute: typeof AdminLayoutRoute
-    }
     '/(main)/_layout/shop/products': {
       id: '/(main)/_layout/shop/products'
       path: '/shop/products'
@@ -331,6 +319,20 @@ declare module '@tanstack/react-router' {
       fullPath: '/blog/$postId'
       preLoaderRoute: typeof mainLayoutBlogPostIdRouteImport
       parentRoute: typeof mainLayoutRoute
+    }
+    '/admin/_layout/blog/posts/': {
+      id: '/admin/_layout/blog/posts/'
+      path: '/blog/posts'
+      fullPath: '/admin/blog/posts/'
+      preLoaderRoute: typeof AdminLayoutBlogPostsIndexRouteImport
+      parentRoute: typeof AdminLayoutRoute
+    }
+    '/admin/_layout/blog/posts/$postId': {
+      id: '/admin/_layout/blog/posts/$postId'
+      path: '/blog/posts/$postId'
+      fullPath: '/admin/blog/posts/$postId'
+      preLoaderRoute: typeof AdminLayoutBlogPostsPostIdRouteImport
+      parentRoute: typeof AdminLayoutRoute
     }
   }
 }
@@ -365,16 +367,16 @@ interface AdminLayoutRouteChildren {
   AdminLayoutDashboardRoute: typeof AdminLayoutDashboardRoute
   AdminLayoutProductsRoute: typeof AdminLayoutProductsRoute
   AdminLayoutUsersRoute: typeof AdminLayoutUsersRoute
-  AdminLayoutBlogPostIdRoute: typeof AdminLayoutBlogPostIdRoute
-  AdminLayoutBlogPostsRoute: typeof AdminLayoutBlogPostsRoute
+  AdminLayoutBlogPostsPostIdRoute: typeof AdminLayoutBlogPostsPostIdRoute
+  AdminLayoutBlogPostsIndexRoute: typeof AdminLayoutBlogPostsIndexRoute
 }
 
 const AdminLayoutRouteChildren: AdminLayoutRouteChildren = {
   AdminLayoutDashboardRoute: AdminLayoutDashboardRoute,
   AdminLayoutProductsRoute: AdminLayoutProductsRoute,
   AdminLayoutUsersRoute: AdminLayoutUsersRoute,
-  AdminLayoutBlogPostIdRoute: AdminLayoutBlogPostIdRoute,
-  AdminLayoutBlogPostsRoute: AdminLayoutBlogPostsRoute,
+  AdminLayoutBlogPostsPostIdRoute: AdminLayoutBlogPostsPostIdRoute,
+  AdminLayoutBlogPostsIndexRoute: AdminLayoutBlogPostsIndexRoute,
 }
 
 const AdminLayoutRouteWithChildren = AdminLayoutRoute._addFileChildren(

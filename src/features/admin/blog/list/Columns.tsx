@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import type { Column, ColumnDef } from "@tanstack/react-table";
 import {
 	ArrowDown,
@@ -128,12 +129,14 @@ export function createColumns({
 			),
 			cell: ({ row }) => (
 				<div className="flex w-fit max-w-[min(500px,50vw)] min-w-0 items-center gap-1">
-					<div
-						className="min-w-0 truncate font-medium"
+					<Link
+						to="/admin/blog/posts/$postId"
+						params={{ postId: String(row.original.id) }}
+						className="min-w-0 truncate font-medium text-foreground hover:underline"
 						title={row.original.title}
 					>
 						{row.original.title}
-					</div>
+					</Link>
 					<TableCellViewer item={row.original}>
 						<Button
 							variant="ghost"

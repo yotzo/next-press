@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PostsTableAdmin } from "#/features/admin/blog/list/PostsTableAdmin";
 
-export const Route = createFileRoute("/admin/_layout/blog/posts")({
+export const Route = createFileRoute("/admin/_layout/blog/posts/")({
 	component: RouteComponent,
 });
 
