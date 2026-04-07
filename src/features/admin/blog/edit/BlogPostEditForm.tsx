@@ -4,6 +4,7 @@ import type { MDEditorProps } from "@uiw/react-md-editor";
 import { useTheme } from "next-themes";
 import type * as React from "react";
 import { useEffect, useRef, useState } from "react";
+import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import {
 	Card,
@@ -118,7 +119,11 @@ export function BlogPostEditForm({ post }: BlogPostEditFormProps) {
 		titleToSlug(post.title) === post.slug || post.slug === "",
 	);
 
-	const form = useForm({
+	const handleDeletePost = () => {
+		console.log("delete post");
+	};
+
+	const postForm = useForm({
 		defaultValues: {
 			title: post.title,
 			status: post.status,
@@ -129,37 +134,193 @@ export function BlogPostEditForm({ post }: BlogPostEditFormProps) {
 	});
 
 	return (
-		<>
-			<Tabs defaultValue="overview" className="w-full">
-				<div className="flex flex-row justify-between items-center">
+		<Tabs defaultValue="general" className="w-full">
+			<form
+				className="flex flex-col gap-6"
+				onSubmit={(e) => {
+					e.preventDefault();
+					e.stopPropagation();
+					console.log("submit");
+					// void postForm.handleSubmit();
+				}}
+			>
+				<div className="flex flex-col md:flex-row justify-between items-center px-6">
 					<TabsList>
-						<TabsTrigger value="overview">Overview</TabsTrigger>
-						<TabsTrigger value="analytics">Analytics</TabsTrigger>
-						<TabsTrigger value="reports">Reports</TabsTrigger>
-						<TabsTrigger value="settings">Settings</TabsTrigger>
+						<TabsTrigger value="general">General</TabsTrigger>
+						<TabsTrigger value="analytics">Content</TabsTrigger>
+						<TabsTrigger value="seo">SEO</TabsTrigger>
+						<TabsTrigger value="social">Social</TabsTrigger>
 					</TabsList>
-					<Button type="button" variant="outline" asChild>
-						<Link to="/admin/blog/posts">Back to posts</Link>
-					</Button>
+					<div className="flex flex-row gap-2">
+						<Button type="button" variant="outline" asChild>
+							<Link to="/admin/blog/posts">Back to posts</Link>
+						</Button>
+						<Button
+							type="button"
+							variant="destructive"
+							onClick={handleDeletePost}
+							className="cursor-pointer"
+						>
+							Delete post
+						</Button>
+						<Button type="submit" className="cursor-pointer">
+							Save changes
+						</Button>
+					</div>
 				</div>
-				<TabsContent value="overview">
-					<Card>
-						<CardHeader>
-							<CardTitle>Overview</CardTitle>
-							<CardDescription>
-								View your key metrics and recent project activity. Track
-								progress across all your active projects.
-							</CardDescription>
-						</CardHeader>
-						<CardContent className="text-sm text-muted-foreground">
-							You have 12 active projects and 3 pending tasks.
-						</CardContent>
-					</Card>
+				<TabsContent value="general">
+					<div className="flex min-w-0 w-full max-w-full flex-col gap-6 p-6">
+						<Card>
+							<CardHeader>
+								<CardTitle>Edit post</CardTitle>
+								<CardDescription>
+									Post #{post.id} · {post.uuid}
+								</CardDescription>
+							</CardHeader>
+							<CardContent className="flex flex-col gap-4">
+								<postForm.Field
+									name="title"
+									listeners={{
+										onChange: ({ value }) => {
+											if (slugTracksTitleRef.current) {
+												postForm.setFieldValue("slug", titleToSlug(value));
+											}
+										},
+									}}
+									validators={{
+										onChange: ({ value }) =>
+											value.trim().length === 0
+												? "Title is required"
+												: undefined,
+									}}
+								>
+									{(field) => (
+										<div className="grid gap-2">
+											<Label htmlFor={field.name}>Title</Label>
+											<Input
+												id={field.name}
+												value={field.state.value}
+												onBlur={field.handleBlur}
+												onChange={(e) => field.setValue(e.target.value)}
+												aria-invalid={field.state.meta.errors.length > 0}
+											/>
+											{fieldError(field.state.meta.errors) ? (
+												<p className="text-destructive text-sm">
+													{fieldError(field.state.meta.errors)}
+												</p>
+											) : null}
+										</div>
+									)}
+								</postForm.Field>
+
+								<postForm.Field
+									name="status"
+									validators={{
+										onChange: ({ value }) =>
+											!(BLOG_POST_STATUSES as readonly string[]).includes(value)
+												? "Pick a valid status"
+												: undefined,
+									}}
+								>
+									{(field) => (
+										<div className="grid gap-2">
+											<Label htmlFor={field.name}>Status</Label>
+											<Select
+												value={field.state.value}
+												onValueChange={(v) => field.setValue(v)}
+											>
+												<SelectTrigger
+													id={field.name}
+													className="w-full"
+													onBlur={field.handleBlur}
+												>
+													<SelectValue placeholder="Status" />
+												</SelectTrigger>
+												<SelectContent>
+													{BLOG_POST_STATUSES.map((s) => (
+														<SelectItem key={s} value={s}>
+															{s}
+														</SelectItem>
+													))}
+												</SelectContent>
+											</Select>
+											{fieldError(field.state.meta.errors) ? (
+												<p className="text-destructive text-sm">
+													{fieldError(field.state.meta.errors)}
+												</p>
+											) : null}
+										</div>
+									)}
+								</postForm.Field>
+
+								<postForm.Field
+									name="slug"
+									validators={{
+										onChange: ({ value }) =>
+											value.trim().length === 0
+												? "Slug is required"
+												: undefined,
+									}}
+								>
+									{(field) => (
+										<div className="grid gap-2">
+											<Label htmlFor={field.name}>Slug</Label>
+											<Input
+												id={field.name}
+												value={field.state.value}
+												onBlur={field.handleBlur}
+												onChange={(e) => {
+													slugTracksTitleRef.current = false;
+													field.setValue(e.target.value);
+												}}
+												aria-invalid={field.state.meta.errors.length > 0}
+												className="font-mono text-sm"
+											/>
+											<p className="text-muted-foreground text-xs">
+												Auto-generated from the title until you edit this field.
+											</p>
+											{fieldError(field.state.meta.errors) ? (
+												<p className="text-destructive text-sm">
+													{fieldError(field.state.meta.errors)}
+												</p>
+											) : null}
+										</div>
+									)}
+								</postForm.Field>
+
+								<postForm.Field
+									name="bodyMarkdown"
+									validators={{
+										onChange: ({ value }) =>
+											value.trim().length === 0
+												? "Body markdown is required"
+												: undefined,
+									}}
+								>
+									{(field) => (
+										<div className="grid gap-2">
+											<MarkdownEditor
+												id={field.name}
+												label="Body (markdown)"
+												value={field.state.value}
+												onChange={(v) => field.setValue(v)}
+											/>
+											{fieldError(field.state.meta.errors) ? (
+												<p className="text-destructive text-sm">
+													{fieldError(field.state.meta.errors)}
+												</p>
+											) : null}
+										</div>
+									)}
+								</postForm.Field>
+							</CardContent>
+						</Card>
+					</div>
 				</TabsContent>
-				<TabsContent value="analytics">
+				<TabsContent value="content">
 					<Card>
 						<CardHeader>
-							<CardTitle>Analytics</CardTitle>
+							<CardTitle>Content</CardTitle>
 							<CardDescription>
 								Track performance and user engagement metrics. Monitor trends
 								and identify growth opportunities.
@@ -170,10 +331,10 @@ export function BlogPostEditForm({ post }: BlogPostEditFormProps) {
 						</CardContent>
 					</Card>
 				</TabsContent>
-				<TabsContent value="reports">
+				<TabsContent value="seo">
 					<Card>
 						<CardHeader>
-							<CardTitle>Reports</CardTitle>
+							<CardTitle>SEO</CardTitle>
 							<CardDescription>
 								Generate and download your detailed reports. Export data in
 								multiple formats for analysis.
@@ -184,10 +345,10 @@ export function BlogPostEditForm({ post }: BlogPostEditFormProps) {
 						</CardContent>
 					</Card>
 				</TabsContent>
-				<TabsContent value="settings">
+				<TabsContent value="social">
 					<Card>
 						<CardHeader>
-							<CardTitle>Settings</CardTitle>
+							<CardTitle>Social</CardTitle>
 							<CardDescription>
 								Manage your account preferences and options. Customize your
 								experience to fit your needs.
@@ -198,173 +359,7 @@ export function BlogPostEditForm({ post }: BlogPostEditFormProps) {
 						</CardContent>
 					</Card>
 				</TabsContent>
-			</Tabs>
-			<div className="flex min-w-0 w-full max-w-full flex-col gap-6 p-6">
-				<div className="flex flex-wrap items-center justify-between gap-3">
-					<div>
-						<h1 className="text-2xl font-semibold tracking-tight">Edit post</h1>
-						<p className="text-muted-foreground text-sm">
-							Post #{post.id} · {post.uuid}
-						</p>
-					</div>
-				</div>
-
-				<Card>
-					<CardHeader>
-						<CardTitle>Content</CardTitle>
-						<CardDescription>
-							Title, publishing status, URL slug, and body. The slug stays in
-							sync with the title until you edit the slug field directly.
-						</CardDescription>
-					</CardHeader>
-					<CardContent>
-						<form
-							className="flex flex-col gap-6"
-							onSubmit={(e) => {
-								e.preventDefault();
-								e.stopPropagation();
-								void form.handleSubmit();
-							}}
-						>
-							<form.Field
-								name="title"
-								listeners={{
-									onChange: ({ value }) => {
-										if (slugTracksTitleRef.current) {
-											form.setFieldValue("slug", titleToSlug(value));
-										}
-									},
-								}}
-								validators={{
-									onChange: ({ value }) =>
-										value.trim().length === 0 ? "Title is required" : undefined,
-								}}
-							>
-								{(field) => (
-									<div className="grid gap-2">
-										<Label htmlFor={field.name}>Title</Label>
-										<Input
-											id={field.name}
-											value={field.state.value}
-											onBlur={field.handleBlur}
-											onChange={(e) => field.setValue(e.target.value)}
-											aria-invalid={field.state.meta.errors.length > 0}
-										/>
-										{fieldError(field.state.meta.errors) ? (
-											<p className="text-destructive text-sm">
-												{fieldError(field.state.meta.errors)}
-											</p>
-										) : null}
-									</div>
-								)}
-							</form.Field>
-
-							<form.Field
-								name="status"
-								validators={{
-									onChange: ({ value }) =>
-										!(BLOG_POST_STATUSES as readonly string[]).includes(value)
-											? "Pick a valid status"
-											: undefined,
-								}}
-							>
-								{(field) => (
-									<div className="grid gap-2">
-										<Label htmlFor={field.name}>Status</Label>
-										<Select
-											value={field.state.value}
-											onValueChange={(v) => field.setValue(v)}
-										>
-											<SelectTrigger
-												id={field.name}
-												className="w-full"
-												onBlur={field.handleBlur}
-											>
-												<SelectValue placeholder="Status" />
-											</SelectTrigger>
-											<SelectContent>
-												{BLOG_POST_STATUSES.map((s) => (
-													<SelectItem key={s} value={s}>
-														{s}
-													</SelectItem>
-												))}
-											</SelectContent>
-										</Select>
-										{fieldError(field.state.meta.errors) ? (
-											<p className="text-destructive text-sm">
-												{fieldError(field.state.meta.errors)}
-											</p>
-										) : null}
-									</div>
-								)}
-							</form.Field>
-
-							<form.Field
-								name="slug"
-								validators={{
-									onChange: ({ value }) =>
-										value.trim().length === 0 ? "Slug is required" : undefined,
-								}}
-							>
-								{(field) => (
-									<div className="grid gap-2">
-										<Label htmlFor={field.name}>Slug</Label>
-										<Input
-											id={field.name}
-											value={field.state.value}
-											onBlur={field.handleBlur}
-											onChange={(e) => {
-												slugTracksTitleRef.current = false;
-												field.setValue(e.target.value);
-											}}
-											aria-invalid={field.state.meta.errors.length > 0}
-											className="font-mono text-sm"
-										/>
-										<p className="text-muted-foreground text-xs">
-											Auto-generated from the title until you edit this field.
-										</p>
-										{fieldError(field.state.meta.errors) ? (
-											<p className="text-destructive text-sm">
-												{fieldError(field.state.meta.errors)}
-											</p>
-										) : null}
-									</div>
-								)}
-							</form.Field>
-
-							<form.Field
-								name="bodyMarkdown"
-								validators={{
-									onChange: ({ value }) =>
-										value.trim().length === 0
-											? "Body markdown is required"
-											: undefined,
-								}}
-							>
-								{(field) => (
-									<div className="grid gap-2">
-										<MarkdownEditor
-											id={field.name}
-											label="Body (markdown)"
-											value={field.state.value}
-											onChange={(v) => field.setValue(v)}
-										/>
-										{fieldError(field.state.meta.errors) ? (
-											<p className="text-destructive text-sm">
-												{fieldError(field.state.meta.errors)}
-											</p>
-										) : null}
-									</div>
-								)}
-							</form.Field>
-
-							<div className="flex justify-end gap-2">
-								<Button type="submit">Save changes</Button>
-							</div>
-						</form>
-					</CardContent>
-				</Card>
-			</div>
-		</>
+			</form>
+		</Tabs>
 	);
 }
