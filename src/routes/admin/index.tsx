@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 
-import { Button } from "#/components/ui/button";
+import { Button } from "@/components/ui/button";
 import {
 	Card,
 	CardContent,
@@ -9,10 +9,10 @@ import {
 	CardFooter,
 	CardHeader,
 	CardTitle,
-} from "#/components/ui/card";
-import { Checkbox } from "#/components/ui/checkbox";
-import { Input } from "#/components/ui/input";
-import { Label } from "#/components/ui/label";
+} from "@/components/ui/card";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 
 export const Route = createFileRoute("/admin/")({
 	component: AdminPage,
@@ -36,7 +36,8 @@ function AdminPage() {
 						<>
 							<CardTitle className="text-xl">Forgot password</CardTitle>
 							<CardDescription>
-								We&apos;ll send a reset link if an account exists for this email.
+								We&apos;ll send a reset link if an account exists for this
+								email.
 							</CardDescription>
 						</>
 					)}
@@ -46,7 +47,7 @@ function AdminPage() {
 						<form
 							className="flex flex-col gap-6"
 							onSubmit={(e) => {
-								e.preventDefault()
+								e.preventDefault();
 							}}
 						>
 							<div className="grid gap-2">
@@ -93,7 +94,7 @@ function AdminPage() {
 						<form
 							className="flex flex-col gap-6"
 							onSubmit={(e) => {
-								e.preventDefault()
+								e.preventDefault();
 							}}
 						>
 							<div className="grid gap-2">
@@ -130,5 +131,5 @@ function AdminPage() {
 				</CardFooter>
 			</Card>
 		</div>
-	)
+	);
 }

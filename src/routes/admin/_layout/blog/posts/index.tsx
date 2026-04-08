@@ -1,11 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { PostsTableAdmin } from "#/features/admin/blog/list/PostsTableAdmin";
+import { PostsTableAdmin } from "@/features/admin/blog/list/PostsTableAdmin";
 
 export const Route = createFileRoute("/admin/_layout/blog/posts/")({
 	component: RouteComponent,
 });
 
-const initalData = await import("#/dummy_data/admin/blog_posts_list.json").then(
+const initalData = await import("@/dummy_data/admin/blog_posts_list.json").then(
 	async (module) => module.default,
 );
 

@@ -16,7 +16,7 @@ import {
 	CardDescription,
 	CardHeader,
 	CardTitle,
-} from "#/components/ui/card";
+} from "@/components/ui/card";
 import {
 	type ChartConfig,
 	ChartContainer,
@@ -24,10 +24,10 @@ import {
 	ChartLegendContent,
 	ChartTooltip,
 	ChartTooltipContent,
-} from "#/components/ui/chart";
-import adminProductSales from "#/dummy_data/admin_product_sales.json";
-import adminVisits from "#/dummy_data/admin_visits.json";
-import { formatProductPrice } from "#/helpers/products";
+} from "@/components/ui/chart";
+import adminProductSales from "@/dummy_data/admin_product_sales.json";
+import adminVisits from "@/dummy_data/admin_visits.json";
+import { formatProductPrice } from "@/helpers/products";
 
 export const Route = createFileRoute("/admin/_layout/dashboard")({
 	component: RouteComponent,

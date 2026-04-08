@@ -7,18 +7,18 @@ import {
 	Share2Icon,
 } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
-import { Avatar, AvatarFallback } from "#/components/ui/avatar";
-import { Badge } from "#/components/ui/badge";
-import { Button } from "#/components/ui/button";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import {
 	Card,
 	CardContent,
 	CardDescription,
 	CardHeader,
 	CardTitle,
-} from "#/components/ui/card";
-import { Separator } from "#/components/ui/separator";
-import articlesFile from "#/dummy_data/articles.json";
+} from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
+import articlesFile from "@/dummy_data/articles.json";
 
 const ALL_ARTICLES = articlesFile.articles;
 type Article = (typeof articlesFile.articles)[number];

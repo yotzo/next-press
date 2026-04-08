@@ -6,17 +6,17 @@ import {
 	RssIcon,
 } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
-import { Avatar, AvatarFallback } from "#/components/ui/avatar";
-import { Badge } from "#/components/ui/badge";
-import { Button } from "#/components/ui/button";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import {
 	Card,
 	CardContent,
 	CardDescription,
 	CardHeader,
 	CardTitle,
-} from "#/components/ui/card";
-import { Input } from "#/components/ui/input";
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
 import {
 	Pagination,
 	PaginationContent,
@@ -25,8 +25,8 @@ import {
 	PaginationLink,
 	PaginationNext,
 	PaginationPrevious,
-} from "#/components/ui/pagination";
-import articlesFile from "#/dummy_data/articles.json";
+} from "@/components/ui/pagination";
+import articlesFile from "@/dummy_data/articles.json";
 
 const PAGE_SIZE = 5;
 
@@ -69,7 +69,7 @@ function paginationRange(
 	for (let i = 0; i < sorted.length; i++) {
 		const cur = sorted[i];
 		if (cur === undefined) {
-			continue
+			continue;
 		}
 		const prev = sorted[i - 1];
 		if (prev !== undefined && cur - prev > 1) {
@@ -106,7 +106,7 @@ function BlogPage() {
 	const categories = useMemo(
 		() => [...new Set(ALL_ARTICLES.map((a) => a.category))].sort(),
 		[],
-	)
+	);
 
 	const filtered = useMemo(() => {
 		return ALL_ARTICLES.filter((a) => {
@@ -116,7 +116,7 @@ function BlogPage() {
 		}).sort(
 			(a, b) =>
 				new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
-		)
+		);
 	}, [category, tagFilter]);
 
 	const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
@@ -139,7 +139,7 @@ function BlogPage() {
 	const pageArticles = filtered.slice(
 		(currentPage - 1) * PAGE_SIZE,
 		currentPage * PAGE_SIZE,
-	)
+	);
 
 	const popularTags = useMemo(() => tagCounts(ALL_ARTICLES), []);
 
@@ -183,8 +183,8 @@ function BlogPage() {
 								className="h-7 text-xs"
 								type="button"
 								onClick={() => {
-									pickCategory(null)
-									pickTag(null)
+									pickCategory(null);
+									pickTag(null);
 								}}
 							>
 								Clear filters
@@ -266,6 +266,7 @@ function BlogPage() {
 							<PaginationContent className="flex-wrap">
 								<PaginationItem>
 									<PaginationPrevious
+										size="sm"
 										href="#"
 										className={
 											currentPage <= 1
@@ -273,16 +274,16 @@ function BlogPage() {
 												: undefined
 										}
 										onClick={(e) => {
-											e.preventDefault()
+											e.preventDefault();
 											if (currentPage > 1) {
-												setPage((p) => p - 1)
-												scrollPaginationToTop()
+												setPage((p) => p - 1);
+												scrollPaginationToTop();
 											}
 										}}
 									/>
 								</PaginationItem>
 								{(() => {
-									let lastPage = 0
+									let lastPage = 0;
 									return range.map((item) => {
 										if (item === "ellipsis") {
 											const key = `ellipsis-after-${lastPage}`;
@@ -290,30 +291,32 @@ function BlogPage() {
 												<PaginationItem key={key}>
 													<PaginationEllipsis />
 												</PaginationItem>
-											)
+											);
 										}
-										lastPage = item
+										lastPage = item;
 										return (
 											<PaginationItem key={item}>
 												<PaginationLink
+													size="sm"
 													href="#"
 													isActive={item === currentPage}
 													onClick={(e) => {
-														e.preventDefault()
+														e.preventDefault();
 														if (item !== currentPage) {
-															setPage(item)
-															scrollPaginationToTop()
+															setPage(item);
+															scrollPaginationToTop();
 														}
 													}}
 												>
 													{item}
 												</PaginationLink>
 											</PaginationItem>
-										)
-									})
+										);
+									});
 								})()}
 								<PaginationItem>
 									<PaginationNext
+										size="sm"
 										href="#"
 										className={
 											currentPage >= totalPages
@@ -321,10 +324,10 @@ function BlogPage() {
 												: undefined
 										}
 										onClick={(e) => {
-											e.preventDefault()
+											e.preventDefault();
 											if (currentPage < totalPages) {
-												setPage((p) => p + 1)
-												scrollPaginationToTop()
+												setPage((p) => p + 1);
+												scrollPaginationToTop();
 											}
 										}}
 									/>
@@ -501,7 +504,7 @@ function BlogPage() {
 							<form
 								className="space-y-2"
 								onSubmit={(e) => {
-									e.preventDefault()
+									e.preventDefault();
 								}}
 							>
 								<Input
@@ -523,5 +526,5 @@ function BlogPage() {
 				</aside>
 			</div>
 		</main>
-	)
+	);
 }

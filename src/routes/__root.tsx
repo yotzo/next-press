@@ -6,9 +6,9 @@ import {
 	Scripts,
 } from "@tanstack/react-router";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
-import { NotFound } from "#/components/NotFound";
-import { getLocale } from "#/paraglide/runtime";
+import { NotFound } from "@/components/NotFound";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { getLocale } from "@/paraglide/runtime";
 import { ThemeProvider } from "@/providers/themeProvider";
 import TanStackQueryDevtools from "../integrations/tanstack-query/devtools";
 import TanStackQueryProvider from "../integrations/tanstack-query/root-provider";

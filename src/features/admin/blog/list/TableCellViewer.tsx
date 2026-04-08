@@ -28,7 +28,7 @@ import {
 	SelectValue,
 } from "@/components/ui/select";
 import { Separator } from "@/components/ui/separator";
-import type { BlogPosts } from "@/features/admin/blog/list/schema";
+import type { BlogPosts } from "@/features/admin/blog/schema";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 const chartData = [
@@ -61,10 +61,7 @@ export function TableCellViewer({
 	const isMobile = useIsMobile();
 
 	return (
-		<Drawer
-			direction={isMobile ? "bottom" : "right"}
-			handleOnly
-		>
+		<Drawer direction={isMobile ? "bottom" : "right"} handleOnly>
 			<DrawerTrigger asChild>
 				{children ?? (
 					<Button

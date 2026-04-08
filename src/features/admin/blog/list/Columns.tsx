@@ -23,7 +23,7 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from "@/components/ui/select";
-import type { BlogPosts } from "@/features/admin/blog/list/schema";
+import type { BlogPosts } from "@/features/admin/blog/schema";
 import { TableCellViewer } from "./TableCellViewer";
 
 /** Status labels used across `blog_posts_list.json` */

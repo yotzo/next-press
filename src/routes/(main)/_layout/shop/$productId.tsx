@@ -1,18 +1,18 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeftIcon } from "lucide-react";
 
-import { ProductImageGallery } from "#/components/shop/product-detail/ProductImageGallery";
-import { ProductMetaSections } from "#/components/shop/product-detail/ProductMetaSections";
-import { ProductPurchasePanel } from "#/components/shop/product-detail/ProductPurchasePanel";
-import { Button } from "#/components/ui/button";
+import { ProductImageGallery } from "@/components/shop/product-detail/ProductImageGallery";
+import { ProductMetaSections } from "@/components/shop/product-detail/ProductMetaSections";
+import { ProductPurchasePanel } from "@/components/shop/product-detail/ProductPurchasePanel";
+import { Button } from "@/components/ui/button";
 import {
 	Card,
 	CardContent,
 	CardDescription,
 	CardHeader,
 	CardTitle,
-} from "#/components/ui/card";
-import { findProductByParam } from "#/helpers/products";
+} from "@/components/ui/card";
+import { findProductByParam } from "@/helpers/products";
 
 export const Route = createFileRoute("/(main)/_layout/shop/$productId")({
 	loader: ({ params }) => {

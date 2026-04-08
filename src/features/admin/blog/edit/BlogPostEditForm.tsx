@@ -1,7 +1,5 @@
 import { useForm } from "@tanstack/react-form";
 import { Link } from "@tanstack/react-router";
-import { Input } from "#/components/ui/input";
-import { Label } from "#/components/ui/label";
 import { Button } from "@/components/ui/button";
 import {
 	Card,
@@ -10,8 +8,10 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import type { BlogPosts } from "@/features/admin/blog/list/schema";
+import type { BlogPosts } from "@/features/admin/blog/schema";
 import { GeneralTab } from "./components/GeneralTab";
 
 export interface BlogPostEditValues {
@@ -21,7 +21,6 @@ export interface BlogPostEditValues {
 	slug: string;
 	bodyMarkdown: string;
 }
-
 
 type BlogPostEditFormProps = {
 	post: BlogPosts;
@@ -44,7 +43,6 @@ export function BlogPostEditForm({ post }: BlogPostEditFormProps) {
 			console.log(value);
 		},
 	});
-	console.log(typeof postForm);
 
 	return (
 		<Tabs defaultValue="general" className="w-full">
@@ -66,7 +64,7 @@ export function BlogPostEditForm({ post }: BlogPostEditFormProps) {
 				<div className="flex flex-col md:flex-row justify-between items-center px-6">
 					<TabsList>
 						<TabsTrigger value="general">General</TabsTrigger>
-						<TabsTrigger value="analytics">Content</TabsTrigger>
+						<TabsTrigger value="content">Content</TabsTrigger>
 						<TabsTrigger value="seo">SEO</TabsTrigger>
 						<TabsTrigger value="social">Social</TabsTrigger>
 					</TabsList>

@@ -22,7 +22,6 @@ import {
 } from "lucide-react";
 import * as React from "react";
 import { Button } from "@/components/ui/button";
-
 import {
 	DropdownMenu,
 	DropdownMenuCheckboxItem,
@@ -45,7 +44,7 @@ import {
 	TableHeader,
 	TableRow,
 } from "@/components/ui/table";
-import type { BlogPosts } from "@/features/admin/blog/list/schema";
+import type { BlogPosts } from "@/features/admin/blog/schema";
 import { createColumns } from "./Columns";
 
 export function PostsTableAdmin({ data: initialData }: { data: BlogPosts[] }) {

@@ -2,8 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SearchIcon, SlidersHorizontalIcon } from "lucide-react";
 import { useMemo, useState } from "react";
 
-import { Badge } from "#/components/ui/badge";
-import { Button } from "#/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import {
 	Card,
 	CardContent,
@@ -11,13 +11,13 @@ import {
 	CardFooter,
 	CardHeader,
 	CardTitle,
-} from "#/components/ui/card";
-import { Checkbox } from "#/components/ui/checkbox";
-import { Input } from "#/components/ui/input";
-import { Label } from "#/components/ui/label";
-import { Separator } from "#/components/ui/separator";
-import { Slider } from "#/components/ui/slider";
-import { formatProductPrice, PRODUCTS, type Product } from "#/helpers/products";
+} from "@/components/ui/card";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Separator } from "@/components/ui/separator";
+import { Slider } from "@/components/ui/slider";
+import { formatProductPrice, PRODUCTS, type Product } from "@/helpers/products";
 
 const SHOP_PRODUCTS_PAGE_TITLE = "Shop products | TanStack Start Starter";
 const SHOP_PRODUCTS_PAGE_DESCRIPTION =
@@ -45,7 +45,7 @@ export const Route = createFileRoute("/(main)/_layout/shop/products")({
 });
 
 const PRICE_MIN = 0;
-const PRICE_MAX = Math.max(...PRODUCTS.map((p) => p.price), 100);
+const PRICE_MAX = Math.max(...PRODUCTS.map((p: Product) => p.price), 100);
 
 function ProductCard({ product }: { product: Product }) {
 	return (
@@ -127,7 +127,7 @@ function ShopProductsPage() {
 
 	const filteredProducts = useMemo(() => {
 		const q = search.trim().toLowerCase();
-		return PRODUCTS.filter((p) => {
+		return PRODUCTS.filter((p: Product) => {
 			if (p.price > maxPrice) {
 				return false;
 			}
@@ -273,7 +273,7 @@ function ShopProductsPage() {
 
 					{filteredProducts.length > 0 ? (
 						<ul className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
-							{filteredProducts.map((product) => (
+							{filteredProducts.map((product: Product) => (
 								<li key={product.id}>
 									<ProductCard product={product} />
 								</li>
