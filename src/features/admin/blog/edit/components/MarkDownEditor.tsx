@@ -5,19 +5,19 @@ import { useEffect, useState } from "react";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 
-type MarkdownEditorProps = {
+type BlogPostMarkdownEditorProps = {
 	id: string;
 	label: string;
 	value: string;
 	onChange: (next: string) => void;
 };
 
-export function MarkdownEditor({
+export function BlogPostMarkdownEditor({
 	id,
 	label,
 	value,
 	onChange,
-}: MarkdownEditorProps) {
+}: BlogPostMarkdownEditorProps) {
 	const { resolvedTheme } = useTheme();
 	const [Editor, setEditor] =
 		useState<React.ComponentType<MDEditorProps> | null>(null);

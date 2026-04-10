@@ -24,7 +24,6 @@ import { BLOG_POST_STATUSES } from "@/features/admin/blog/list/Columns";
 import type { BlogPosts } from "@/features/admin/blog/schema";
 import type { BlogPostEditValues } from "../BlogPostEditForm";
 import { fieldError, titleToSlug } from "../helpers";
-import { MarkdownEditor } from "./MarkDownEditor";
 
 type BlogPostEditFormApi = ReactFormExtendedApi<
 	BlogPostEditValues,
@@ -164,31 +163,7 @@ export const GeneralTab = ({ post, postForm }: GeneralTabProps) => {
 					)}
 				</postForm.Field>
 
-				<postForm.Field
-					name="bodyMarkdown"
-					validators={{
-						onChange: ({ value }: { value: string }) =>
-							value.trim().length === 0
-								? "Body markdown is required"
-								: undefined,
-					}}
-				>
-					{(field) => (
-						<div className="grid gap-2">
-							<MarkdownEditor
-								id={field.name}
-								label="Body (markdown)"
-								value={field.state.value}
-								onChange={(v) => field.setValue(v)}
-							/>
-							{fieldError(field.state.meta.errors) ? (
-								<p className="text-destructive text-sm">
-									{fieldError(field.state.meta.errors)}
-								</p>
-							) : null}
-						</div>
-					)}
-				</postForm.Field>
+				
 			</CardContent>
 		</Card>
 	);

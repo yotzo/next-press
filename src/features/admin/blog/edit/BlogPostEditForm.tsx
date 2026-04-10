@@ -1,6 +1,4 @@
 import { useForm } from "@tanstack/react-form";
-import { Link } from "@tanstack/react-router";
-import { Button } from "@/components/ui/button";
 import {
 	Card,
 	CardContent,
@@ -8,11 +6,12 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import type { BlogPosts } from "@/features/admin/blog/schema";
 import { GeneralTab } from "./components/GeneralTab";
+import { BlogPostMarkdownEditor } from "./components/MarkDownEditor";
+import { PostButtons } from "./components/PostButtons";
+import { fieldError } from "./helpers";
 
 export interface BlogPostEditValues {
 	id: number;
@@ -44,23 +43,23 @@ export function BlogPostEditForm({ post }: BlogPostEditFormProps) {
 		},
 	});
 
+	const handleOnSubmit = async () => {
+		let isSuccess = false;
+		await postForm.handleSubmit({
+			onSuccess: () => {
+				isSuccess = true;
+				console.log("success");
+			},
+			onError: () => {
+				console.log("error");
+			},
+		});
+		return isSuccess;
+	};
+
 	return (
 		<Tabs defaultValue="general" className="w-full">
-			<form
-				className="flex flex-col gap-6"
-				onSubmit={(e) => {
-					e.preventDefault();
-					e.stopPropagation();
-					void postForm.handleSubmit({
-						onSuccess: () => {
-							console.log("success");
-						},
-						onError: () => {
-							console.log("error");
-						},
-					});
-				}}
-			>
+			<form className="flex flex-col gap-6">
 				<div className="flex flex-col md:flex-row justify-between items-center px-6">
 					<TabsList>
 						<TabsTrigger value="general">General</TabsTrigger>
@@ -69,20 +68,10 @@ export function BlogPostEditForm({ post }: BlogPostEditFormProps) {
 						<TabsTrigger value="social">Social</TabsTrigger>
 					</TabsList>
 					<div className="flex flex-row gap-2">
-						<Button type="button" variant="outline" asChild>
-							<Link to="/admin/blog/posts">Back to posts</Link>
-						</Button>
-						<Button
-							type="button"
-							variant="destructive"
-							onClick={handleDeletePost}
-							className="cursor-pointer"
-						>
-							Delete post
-						</Button>
-						<Button type="submit" className="cursor-pointer">
-							Save changes
-						</Button>
+						<PostButtons
+							handleDeletePost={handleDeletePost}
+							handleOnSubmit={handleOnSubmit}
+						/>
 					</div>
 				</div>
 				<TabsContent value="general">
@@ -91,37 +80,43 @@ export function BlogPostEditForm({ post }: BlogPostEditFormProps) {
 					</div>
 				</TabsContent>
 				<TabsContent value="content">
-					<Card>
-						<CardHeader>
-							<CardTitle>Content</CardTitle>
-							<CardDescription>
-								Track performance and user engagement metrics. Monitor trends
-								and identify growth opportunities.
-							</CardDescription>
-						</CardHeader>
-						<CardContent className="text-sm text-muted-foreground">
-							<postForm.Field
-								name="title"
-								validators={{
-									onChange: ({ value }) =>
-										value.trim().length === 0 ? "Title is required" : undefined,
-								}}
-							>
-								{(field) => (
-									<div className="grid gap-2">
-										<Label htmlFor={field.name}>Title</Label>
-										<Input
-											id={field.name}
-											value={field.state.value}
-											onBlur={field.handleBlur}
-											onChange={(e) => field.setValue(e.target.value)}
-											aria-invalid={field.state.meta.errors.length > 0}
-										/>
-									</div>
-								)}
-							</postForm.Field>
-						</CardContent>
-					</Card>
+					<div className="flex min-w-0 w-full max-w-full flex-col gap-6 p-6">
+						<Card>
+							<CardHeader>
+								<CardTitle>Content</CardTitle>
+								<CardDescription>
+									Add your blog post content here.
+								</CardDescription>
+							</CardHeader>
+							<CardContent className="text-sm text-muted-foreground">
+								<postForm.Field
+									name="bodyMarkdown"
+									validators={{
+										onChange: ({ value }: { value: string }) =>
+											value.trim().length === 0
+												? "Body markdown is required"
+												: undefined,
+									}}
+								>
+									{(field) => (
+										<div className="grid gap-2">
+											<BlogPostMarkdownEditor
+												id={field.name}
+												label="Body (markdown)"
+												value={field.state.value}
+												onChange={(v) => field.setValue(v)}
+											/>
+											{fieldError(field.state.meta.errors) ? (
+												<p className="text-destructive text-sm">
+													{fieldError(field.state.meta.errors)}
+												</p>
+											) : null}
+										</div>
+									)}
+								</postForm.Field>
+							</CardContent>
+						</Card>
+					</div>
 				</TabsContent>
 				<TabsContent value="seo">
 					<Card>
