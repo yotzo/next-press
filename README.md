@@ -4,8 +4,8 @@ Next Press Kit is a starter kit for building modern web apps using [TanStack Sta
 
 The goal of this project is to give developers a strong starting point they can clone and build on, with common product needs already in place: authentication handling, blog post creation flows, and an administration area.
 
-- Website: <a href="https://nextpresskit.com" target="_blank" rel="noopener noreferrer">nextpresskit.com</a>
-- Backend API repository: <a href="https://github.com/nextpresskit/backend" target="_blank" rel="noopener noreferrer">nextpresskit/backend</a>
+- Website: [nextpresskit.com](https://nextpresskit.com)
+- Backend API repository: [nextpresskit/backend](https://github.com/nextpresskit/backend)
 
 ## Project Concepts
 
