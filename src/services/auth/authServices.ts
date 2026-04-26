@@ -39,4 +39,4 @@ export const refresh = () =>
 	clientAxios.post<RefreshResponse>("/auth/refreshAccessToken");
 
 export const getCurrentUser = (): Promise<AxiosResponse<User>> =>
-	clientAxios.get<User>("/auth/user");
+	clientAxios.get<User>("/auth/me");
