@@ -30,10 +30,40 @@ Install dependencies and run the app locally:
 
 ```bash
 bun install
-bun --bun run dev
+bun dev
 ```
 
-The development server runs on `http://localhost:3000`.
+## Create Certificates - One time setup
+
+This is a one time setup to create certificates for the development server.
+If you don't have mkcert installed, you can install it with:
+
+For Mac OS:
+
+```bash
+brew install mkcert
+```
+
+For Windows:
+
+```bash
+choco install mkcert
+```
+
+For Linux:
+
+```bash
+sudo apt install mkcert
+```
+
+Then run the following commands to create the certificates:
+
+```bash
+mkcert -install
+mkcert localhost
+```
+
+The development server runs on `https://localhost:3000`.
 
 ## Scripts
 

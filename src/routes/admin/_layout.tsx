@@ -1,12 +1,10 @@
-import { createFileRoute, Outlet, useNavigate } from "@tanstack/react-router";
-import { useEffect } from "react";
+import { createFileRoute, Outlet } from "@tanstack/react-router";
 import { FooterAdmin } from "@/components/admin/FooterAdmin";
 import { HeaderAdmin } from "@/components/admin/HeaderAdmin";
 import { NotFoundAdmin } from "@/components/admin/NotFoundAdmin";
 import { AdminSidebar } from "@/components/admin/Sideabar/AdminSidebar";
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 import { Toaster } from "@/components/ui/sonner";
-import { isAuthenticated } from "@/lib/auth/userAuth";
 
 export const Route = createFileRoute("/admin/_layout")({
 	component: RouteComponent,
@@ -14,18 +12,6 @@ export const Route = createFileRoute("/admin/_layout")({
 });
 
 function RouteComponent() {
-	const navigate = useNavigate();
-
-	useEffect(() => {
-		if (typeof window === "undefined") {
-			return;
-		}
-		const isAuth = isAuthenticated();
-		if (!isAuth) {
-			navigate({ to: "/admin" });
-		}
-	}, [navigate]);
-
 	return (
 		<SidebarProvider
 			style={

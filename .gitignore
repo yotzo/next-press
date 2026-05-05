@@ -9,5 +9,7 @@ dist-ssr
 .wrangler
 .output
 .vinxi
+localhost-key.pem
+localhost.pem
 __unconfig*
 todos.json
